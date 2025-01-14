@@ -7,9 +7,9 @@
         <language>zh-CN</language>
         <pubDate>Fri, 27 Dec 2024 17:08:15 +0800</pubDate>
         <lastBuildDate>Fri, 27 Dec 2024 17:08:15 +0800</lastBuildDate>
+        <category>Java</category>
         <category>pwn</category>
         <category>Linux</category>
-        <category>Java</category>
         <category>二进制</category>
         <category>Apache</category>
         <category>报错</category>
@@ -25,10 +25,10 @@
         <category>how2heap</category>
         <category>ret2csu</category>
         <category>ret2dlresolve</category>
-        <category>nc</category>
         <category>fastbin.attack</category>
         <category>系统调用</category>
         <category>rop</category>
+        <category>nc</category>
         <item>
             <guid isPermalink="true">https://vvwwvv.cn/2024/12/27/web/ctfshow_web(1~77%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C)/</guid>
             <title>ctfshow_web_(1~77)</title>
