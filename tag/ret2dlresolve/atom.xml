@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://vvwwvv.cn</id>
+    <title>0110 0011 0111 1001 0110 0010 • Posts by &#34;ret2dlresolve&#34; tag</title>
+    <link href="https://vvwwvv.cn" />
+    <updated>2023-10-01T06:15:56.000Z</updated>
+    <category term="pwn" />
+    <category term="Linux" />
+    <category term="Java" />
+    <category term="二进制" />
+    <category term="Apache" />
+    <category term="报错" />
+    <category term="xss" />
+    <category term="sql" />
+    <category term="web" />
+    <category term="C++" />
+    <category term="C语言" />
+    <category term="windows" />
+    <category term="渗透" />
+    <category term="phppwn" />
+    <category term="ctf" />
+    <category term="how2heap" />
+    <category term="ret2csu" />
+    <category term="ret2dlresolve" />
+    <category term="nc" />
+    <category term="fastbin.attack" />
+    <category term="系统调用" />
+    <category term="rop" />
+    <entry>
+        <id>https://vvwwvv.cn/2023/10/01/pwn/%E4%B8%93%E6%A0%8F/ret2dlresolve/</id>
+        <title>高级ROP之ret2dlresolve</title>
+        <link rel="alternate" href="https://vvwwvv.cn/2023/10/01/pwn/%E4%B8%93%E6%A0%8F/ret2dlresolve/"/>
+        <content type="html">&lt;p&gt;【例题 ctfshow pwn82】&lt;/p&gt;
+&lt;h1 id=&#34;1用处&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1用处&#34;&gt;#&lt;/a&gt; 1. 用处：&lt;/h1&gt;
+&lt;p&gt;在有溢出而无法泄露内容时可以利用 &lt;code&gt;ret2dlresolve&lt;/code&gt;  来修改解析的函数，从而达到执行想要的函数的目的&lt;/p&gt;
+&lt;h1 id=&#34;2原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2原理&#34;&gt;#&lt;/a&gt; 2. 原理：&lt;/h1&gt;
+&lt;p&gt;程序通过动态链接来达到节省空间的目的，动态链接会有一个延迟绑定的特点，将连接的过程推迟到了程序运行时&lt;/p&gt;
+&lt;p&gt;动态链接中有个重要函数 &lt;code&gt;_dl_runtime_resolve(link_map_obj,reloc_index)&lt;/code&gt;  来对动态链接的函数进行重定位&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;利用dl_resolve原因：
+1、dl_resolve 函数不会检查对应的函数是否越界，它只会根据我们给定的数据来执行（也就是说其可以偏移到我们构造的地方）
+2、dl_resolve 函数最后的解析根本上依赖于所给定的字符串（修改其要解析的字符串也就会调用修改后的函数）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;dl_runtime_resolve&lt;/code&gt;  函数只会在第一次调用这个动态链接的函数时其作用，第二次调用就不需要解析了，可以直接得到这个调用的函数的地址；&lt;br /&gt;
+第一次调用时程序会查找需要链接的各种信息，再通过 &lt;code&gt;_dl_runtime_resolve&lt;/code&gt;  将函数的真实地址写入 &lt;code&gt;got.plt&lt;/code&gt;  表中&lt;/p&gt;
+&lt;h2 id=&#34;1运行_dl_runtime_resolve前&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1运行_dl_runtime_resolve前&#34;&gt;#&lt;/a&gt; 1. 运行 &lt;code&gt;_dl_runtime_resolve&lt;/code&gt;  前&lt;/h2&gt;
+&lt;p&gt;在第一次调用动态链接函数前程序执行的是 &lt;code&gt;*.plt&lt;/code&gt;  函数，其内部会执行 &lt;code&gt;dl_runtime_resolve&lt;/code&gt;  来进行解析找到真实地址&lt;/p&gt;
+&lt;p&gt;这里看一下第一次调用 write 函数的情况（实际上第一次调用的是 &lt;code&gt;write@plt&lt;/code&gt;  的形式）利用命令 &lt;code&gt;objdump -d pwn82&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/J3LCM3%7D8A7IR%243ZVS5%5B%7E%24%5B0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;得到第一次调用 write 的地址，在 gdb 中下断点 &lt;code&gt;b *0x80485a6&lt;/code&gt;  ，然后运行&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/2%25E2%603020%29S%28APWNR_XA%402N.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;si 单步进入 &lt;code&gt;write@plt&lt;/code&gt;  查看情况:&lt;/p&gt;
+&lt;p&gt;发现最后执行了 &lt;code&gt;_dl_runtime_resolve&lt;/code&gt; ， &lt;code&gt;got.plt&lt;/code&gt;  内放的是要跳转执行的下一条汇编指令地址&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/6M1%2929H%7EX_U%7EV%7B%5BBKT%60%2934D.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/8I%25%25MU7WYWO2ANV%299IA6UQ5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;分析具体调用方法：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/RZBD1EJ%40Y3I%40_40%60%292Y17%5BM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 write 自己的表项后，有个 push 0x20 是 &lt;code&gt;dl_runtime_resolve(link_map_obj,reloc_index)&lt;/code&gt;  的第二个参数 `reloc_index&lt;/li&gt;
+&lt;li&gt;进入公共 plt 表项 (plt0) 后，有个 push &amp;lt;0x80498bc&amp;gt; 就是第一个参数 &lt;code&gt;link_map_obj&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这里我们需要将 plt0 的地址覆盖到 ret 处，也就是执行了跳转，同时将 &lt;code&gt;dl_runtime_resolve&lt;/code&gt;  的第一个参数 push 进栈【这么做的原因是因为我们需要利用 &lt;code&gt;dl_runtime_resolve&lt;/code&gt;  函数解析执行我们需要的函数，直接 ret 进入会缺少第一个参数，用自己的 plt 表项覆盖 ret 就无法偏移到我们想要的地址】&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这里利用ret0覆盖ret后，需要直接写入参数&amp;quot;reloc_index&amp;quot;,因为这是通过模拟这种方式执行write_plt等函数(可以将这两个整体视为调用了函数)，需要手动写入参数到栈上，后面就是调用write_plt的返回地址和参数
+最终也就是：p32(plt0)+p32(reloc_index)+p32(返回地址)+p32(参数1)+p32(参数2)+p32(参数3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;疑问&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#疑问&#34;&gt;#&lt;/a&gt; 疑问&lt;/h3&gt;
+&lt;p&gt;为什么要以 &lt;code&gt;plt0&lt;/code&gt;  覆盖 ret，而不直接用 &lt;code&gt;dl_runtime_resolve&lt;/code&gt;  来覆盖&lt;/p&gt;
+&lt;p&gt;因为需要填充 &lt;code&gt;dl_runtime_resolve&lt;/code&gt;  的参数，而我们执行 &lt;code&gt;plt0&lt;/code&gt;  就不需要填充第一个参数了，而第二个参数是我们需要控制的所以需要自己填充&lt;/p&gt;
+&lt;h2 id=&#34;2执行_dl_runtime_resolve&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2执行_dl_runtime_resolve&#34;&gt;#&lt;/a&gt; 2. 执行 &lt;code&gt;_dl_runtime_resolve&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;在上面的两个 push 中将 &lt;code&gt;_dl_runtime_resolve&lt;/code&gt;  的两个参数压入栈中，然后就进入 &lt;code&gt;_dl_runtime_resolve&lt;/code&gt;  来执行&lt;/p&gt;
+&lt;p&gt;其内部过程为 (借用大佬的图)：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/V%60%28342LD_94ZQ%7BI%5DN%5DV%5B%7EWA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;通过上面的图可以看到以第二个参数为准，然后一步一步相加计算得到要解析的函数名&lt;/p&gt;
+&lt;h3 id=&#34;第一步得到reloc_index&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一步得到reloc_index&#34;&gt;#&lt;/a&gt; 第一步：得到 reloc_index&lt;/h3&gt;
+&lt;p&gt;利用第二个参数与 &lt;code&gt;.rel.plt&lt;/code&gt;  相加，那么就可以得到调用的函数的具体 &lt;code&gt;.rel.plt&lt;/code&gt;  结构体情况：&lt;/p&gt;
+&lt;p&gt;.rel.plt 结构体：&lt;/p&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption data-lang=&#34;c&#34;&gt;&lt;span&gt;c&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Addr r_offset&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Word r_info&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;Elf32_Rel&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;从上面的 &lt;code&gt;.rel.plt&lt;/code&gt;  结构体来看， &lt;code&gt;.rel.plt&lt;/code&gt;  重定位表 是保持了所有函数的这个结构体信息（每个结构体 8 字节），而不仅仅是起到一个索引的作用&lt;/p&gt;
+&lt;p&gt;因此用 &lt;code&gt;.rel.plt&lt;/code&gt;  的基地址加上 &lt;code&gt;偏移&lt;/code&gt; 就为所要函数的 &lt;code&gt;Elf32_Rel&lt;/code&gt;  指针，然后就得到了对应的 &lt;code&gt;r_offset&lt;/code&gt;  和 &lt;code&gt;r_info&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.rel.plt&lt;/code&gt;  存放内容 (命令 &lt;code&gt;readelf -x .rel.plt 程序名&lt;/code&gt; )：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/TYY7DHBU_3%5D%40MSM_C5I2JCM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我们的重点就是在这个 &lt;code&gt;偏移&lt;/code&gt; 如何得到：&lt;/p&gt;
+&lt;p&gt;上面可以知道在执行时，第二次跳转到 &lt;code&gt;plt0&lt;/code&gt;  (.plt 表的头部)，而我们需要的是 &lt;code&gt;.rel.plt&lt;/code&gt;  这里就有一个对应的关系（这里就要计算得函数是.plt 的第几个结构体，）&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/%28ZI0%5BH%7BC5UX9KC%60TES_%2864Q.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;上面可以看到，对应结构体开始在 &lt;code&gt;.plt&lt;/code&gt;  中是从下标 1 开始，而在 &lt;code&gt;.rel.plt&lt;/code&gt;  中是从下标 0 开始，也就是说如果 write 结构体是结构体 5，那么在 &lt;code&gt;.rel.plt&lt;/code&gt;  中就是结构体 4&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.plt&lt;/code&gt;  存放内容 (命令 &lt;code&gt;readelf -x .plt 程序名&lt;/code&gt; )：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/J%25EK%60RH8%5B5%25NNGKG%7DI3M0%5B5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;通过上面的对应关系知道，我们想要找 write 在 &lt;code&gt;.rel.plt&lt;/code&gt;  重定位索引就要通过 plt 来得到，由 &lt;code&gt;.plt&lt;/code&gt;  与 &lt;code&gt;.rel.plt&lt;/code&gt;  的对应关系知道： &lt;code&gt;plt结构体-1=rel.plt结构体&lt;/code&gt; ，所以这里计算在.plt 中是第几个结构体：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;write_plt-plt[0]=offset    //这里plt[0]地址可以通过pwntools得到
+offset/16=是plt表中的第几个结构体
+plt结构体-1=rel.plt结构体
+因为.rel.plt结构体的大小为8字节，所以还要乘8(这里得到的值是相对偏移)
+
+也就是：
+write_index = [（write_plt-plt[0]）/16 -1] * 8（write_index就是与.rel.plt的偏移，也就是reloc_index）【不过其实这个计算再后面伪造时用不到，因为偏移通过后面伪造的地址减基地址就得到了】
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;第二步伪造relplt结构体&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二步伪造relplt结构体&#34;&gt;#&lt;/a&gt; 第二步：伪造 &lt;code&gt;.rel.plt&lt;/code&gt;  结构体&lt;/h2&gt;
+&lt;p&gt;上面知道 &lt;code&gt;write_index&lt;/code&gt;  知道，这是与 &lt;code&gt;.rel.plt&lt;/code&gt;  的偏移；但是在 &lt;code&gt;dl_resolve&lt;/code&gt;  执行时并没有检查边界，所以我们可以将这个偏移任意修改，因此可以修改其偏移到到我们伪造的 &lt;code&gt;.rel.plt&lt;/code&gt;  结构体，可以构建式子：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rel.plt+write_index=fake_struck_rel_plt
+
+所以：
+write_index=fake_strunk_rel_plt-rel.plt
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后需要考虑在偏移的地方来伪造对应的结构体：&lt;/p&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption data-lang=&#34;c&#34;&gt;&lt;span&gt;c&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Addr r_offset&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Word r_info&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;Elf32_Rel&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这个结构体有两个成员变量需要伪造，第一个是 &lt;code&gt;r_offset&lt;/code&gt; ，这个可以通过 pwntools 的 ELF 功能自动获得，也就是 &lt;code&gt;write_got=elf.got[&amp;quot;write&amp;quot;]&lt;/code&gt; ；第二个成员变量 &lt;code&gt;r_info&lt;/code&gt;  需要自己查看 &lt;code&gt;readelf -a 程序名&lt;/code&gt; ，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/BQV2YETO9H51Z6PB%29HJ%5BG%5B9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;看下面的图可以知道， &lt;code&gt;r_info&lt;/code&gt;  右移一个字节，以上图中的 &lt;code&gt;607&lt;/code&gt;  的 6 作为.dynsym 下标，寻找.dynsym 的标号为 6 结构体 (下标以 0 开始)&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/V%60%28342LD_94ZQ%7BI%5DN%5DV%5B%7EWA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第三步构造动态符号表-dynsymr_info8&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第三步构造动态符号表-dynsymr_info8&#34;&gt;#&lt;/a&gt; 第三步：构造动态符号表  &lt;code&gt;dynsym+(r_info&amp;gt;&amp;gt;8)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;dynsym 结构体：&lt;/p&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption data-lang=&#34;c&#34;&gt;&lt;span&gt;c&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Word    st_name&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 符号名，是相对.dynstr 起始的偏移&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Addr    st_value&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Word    st_size&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; st_info&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 对于导入函数符号而言，它是 0x12&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; st_other&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  Elf32_Section st_shndx&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;Elf32_Sym&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 对于导入函数符号而言，除 st_name 外其他字段都是 0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;所以根据该结构体，我们要伪造的结构体样子大致为 &lt;code&gt;[name偏移，0，0，0x12]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/J52%60QY%29Q4AT0HNC9%5DR8OWR9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;l 利用命令 &lt;code&gt;readelf -a pwn82&lt;/code&gt;  找到 &lt;code&gt;.dynsym&lt;/code&gt;  符号表，可以看到 write 对应的是下标 &lt;code&gt;Num=6&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/S%40Z%5DT16%7ELH_M4%24QEQGURG%29Y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;接下来查看具体 write 的 &lt;code&gt;.dynsym&lt;/code&gt;  结构体：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/Y%5D%298I%60C4%29MQK44S%40%7E9OJGQA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;其结构体就是 &lt;code&gt;[0x4c,0,0,0x12]&lt;/code&gt; （当然这里的 0x4c 可以被改变，这就达到解析其他字符串的目的），而在 &lt;code&gt;dynsym+(r_info&amp;gt;&amp;gt;8)&lt;/code&gt;  也就是得到了该结构体，我们可以修改 &lt;code&gt;r_info&lt;/code&gt;  使下标指向到我们伪造的 &lt;code&gt;dynsym&lt;/code&gt;  结构体处&lt;/p&gt;
+&lt;p&gt;伪造 &lt;code&gt;.dynsym&lt;/code&gt;  结构体：&lt;/p&gt;
+&lt;p&gt;因为 &lt;code&gt;.dynsym&lt;/code&gt;  的每个结构体大小是 16 字节，那么我们就需要满足其是 16 字节对齐的（因为这里是以下标的形式索引每次只能 16 字节的查找，其他的直接用偏移所以不用担心对齐），利用公式使其满足 16 字节对齐：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fake_sym_addr = base_stage + 32 //伪造结构体的地址
+align = 0x10 - ((fake_sym_addr - dynsym) &amp;amp; 0xf)   //计算是否是16字节对齐
+fake_sym_addr = fake_sym_addr + align //使完成16字节对齐
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;疑问1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#疑问1&#34;&gt;#&lt;/a&gt; 疑问 1&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;0x10 - ((0x8048a88 - 0x8048a00) &amp;amp; 0xf) = 0x10 - 0x8 = 0x8
+
+距离初始的偏移，然后与0xf查看最后一16进制位的值，0x10来看其满足16进制对齐还有多少距离
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来利用伪造的 &lt;code&gt;.dynsym结构体&lt;/code&gt; 来反推 &lt;code&gt;r_info&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;我们知道 &lt;code&gt;dynsym+(r_info&amp;gt;&amp;gt;8)=write结构体地址&lt;/code&gt;  ，而在我们伪造的结构体下已知了结构体地址，所以:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;index_dynsym = (fake_sym_add-dynsym ) / 0x10（间隔的结构体个数）
+r_info=(index_dynsym&amp;lt;&amp;lt;8)+0x07
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里得到的 &lt;code&gt;r_info&lt;/code&gt;  就可以在前面伪造的 &lt;code&gt;.rel.plt&lt;/code&gt;  结构体处使用这个值（ &lt;code&gt;r_offset&lt;/code&gt;  不用改变）&lt;/p&gt;
+&lt;h2 id=&#34;第四步构造动态字符表dynstr&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第四步构造动态字符表dynstr&#34;&gt;#&lt;/a&gt; 第四步：构造动态字符表 (.dynstr)&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%E4%B8%93%E6%A0%8F/ret2dlresolve/QP%7B4V_ZZ%24I1%5D2W%5D%298%24%286%7BPO.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这里我们需要构造两部分&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;构造 &lt;code&gt;.dynstr&lt;/code&gt;  动态字符表 (也就是部署 &lt;code&gt;write\x00&lt;/code&gt;  这个字符串去解析)&lt;/li&gt;
+&lt;li&gt;修改第三步中的 &lt;code&gt;.dynsym&lt;/code&gt;  结构体的 &lt;code&gt;str_name&lt;/code&gt;  这个偏移量（使能够找到 write 字符串）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;首先就是部署 &lt;code&gt;write\x00&lt;/code&gt;  字符串，得到这个的地址记为 &lt;code&gt;fake_write_addr&lt;/code&gt; ，接下来计算偏移  &lt;code&gt;str_name=fake_write_addr-dynstr&lt;/code&gt;  ，最后将第三步中的 &lt;code&gt;dynsym&lt;/code&gt;  结构体伪造成 &lt;code&gt;[str_name，0，0，0x12]&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第五步getshell&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第五步getshell&#34;&gt;#&lt;/a&gt; 第五步：getshell&lt;/h2&gt;
+&lt;p&gt;上面部署的是 &lt;code&gt;write\x00&lt;/code&gt;  字符串，那么我们下面将其部署成 &lt;code&gt;system\x00&lt;/code&gt;  就可以了，而 write 函数的三个参数中，将第一个参数修改为 &lt;code&gt;/bin/sh\x00&lt;/code&gt;  就能 getshell&lt;/p&gt;
+&lt;h1 id=&#34;3总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3总结&#34;&gt;#&lt;/a&gt; 3. 总结：&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;ret2dlresolve&lt;/code&gt;  是在无法泄露地址得到 libc 的情况下使用，这里是通过调用其他函数的 plt，之后在解析时解析我们想要执行的函数名即可&lt;/p&gt;
+&lt;h3 id=&#34;执行流程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#执行流程&#34;&gt;#&lt;/a&gt; 执行流程:&lt;/h3&gt;
+&lt;p&gt;1. 首先通过重定位索引 &lt;code&gt;reloc_index&lt;/code&gt;  来确定需要的函数在重定位表 &lt;code&gt;.rel.plt&lt;/code&gt;  的偏移是多少，以此来找到对应的 &lt;code&gt;Elf32_Rel&lt;/code&gt;  结构体&lt;/p&gt;
+&lt;p&gt;构造步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;部署字符串（要执行的函数名，如 &lt;code&gt;system\x00&lt;/code&gt; ）&lt;/li&gt;
+&lt;li&gt;通过 &lt;code&gt;字符串地址-dynstr基地址&lt;/code&gt;  得到 dynsym 结构体中第一个成员变量的值（也就是字符串的偏移）&lt;/li&gt;
+&lt;li&gt;部署伪造的 system 的 &lt;code&gt;.dynsym&lt;/code&gt;  结构体，其中第一个成员变量要用 &lt;code&gt;步骤2&lt;/code&gt;  的值&lt;/li&gt;
+&lt;li&gt;由伪造的 &lt;code&gt;system&lt;/code&gt;  结构体地址 - dynsym 基地址 = 偏移，利用该偏移得到 &lt;code&gt;r_info&lt;/code&gt;  ((偏移 / 0x10&amp;lt;&amp;lt;8)+0x7)&lt;/li&gt;
+&lt;li&gt;伪造 &lt;code&gt;rel.plt&lt;/code&gt;  结构体，通过上面的 &lt;code&gt;r_info&lt;/code&gt;  作为其第二个成员变量（第一个成员变量为 &lt;code&gt;write_got&lt;/code&gt;  等）&lt;/li&gt;
+&lt;li&gt;利用伪造的 &lt;code&gt;rel.plt&lt;/code&gt;  结构体地址 - rel.plt 基地址 = &lt;code&gt;reloc_index&lt;/code&gt; ，得到的 &lt;code&gt;reloc_index&lt;/code&gt;  就是 &lt;code&gt;dl_runtime_resolve&lt;/code&gt;  第二个参数，第一个参数是 &lt;code&gt;link_map_obj&lt;/code&gt;  在前面利用 &lt;code&gt;plt0&lt;/code&gt;  覆盖 ret 后就直接 push 进栈了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;疑问1-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#疑问1-2&#34;&gt;#&lt;/a&gt; 疑问 1&lt;/h2&gt;
+&lt;p&gt;有个疑问，为什么要分成三个表，直接是动态字符串表加偏移不行吗&lt;/p&gt;
+&lt;p&gt;个人觉得这是为了节省一定的资源，能够缩小一定的查找范围&lt;/p&gt;
+&lt;h2 id=&#34;疑问2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#疑问2&#34;&gt;#&lt;/a&gt; 疑问 2&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;.plt0&lt;/code&gt; 、 &lt;code&gt;.rel.plt&lt;/code&gt; 、 &lt;code&gt;.dynsym&lt;/code&gt; 、 &lt;code&gt;.dynstr&lt;/code&gt;  的基地址怎么找：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plt0=elf.get_section_by_name(&amp;quot;.plt&amp;quot;).header.sh_addr
+rel_plt = elf.get_section_by_name(&#39;.rel.plt&#39;).header.sh_addr
+dynsym = elf.get_section_by_name(&#39;.dynsym&#39;).header.sh_addr
+dynstr = elf.get_section_by_name(&#39;.dynstr&#39;).header.sh_addr
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;疑问3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#疑问3&#34;&gt;#&lt;/a&gt; 疑问 3&lt;/h2&gt;
+&lt;p&gt;r_offset 的作用是什么，好像除了保持函数在 got 表的偏移就没有用了，这个偏移也就是 &lt;code&gt;write_got = elf.got[&#39;write&#39;]&lt;/code&gt;  ，个人理解其作用是将 write 函数填入，不直接填入 system 是因为没有调用 &lt;code&gt;system_plt&lt;/code&gt; ，通过这种方式进入 &lt;code&gt;dl_runtime_resolve&lt;/code&gt;  最后改将解析的 write 变为 system 即可&lt;/p&gt;
+&lt;h2 id=&#34;疑问4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#疑问4&#34;&gt;#&lt;/a&gt; 疑问 4&lt;/h2&gt;
+&lt;p&gt;r_offset 是 &lt;code&gt;write_got = elf.got[&#39;write&#39;]&lt;/code&gt;  而再调用过 write_plt 和未调用过 write_plt 情况下 &lt;code&gt;write_got&lt;/code&gt;  是否相同？&lt;/p&gt;
+&lt;p&gt;第一次调用时才进行解析，后面调用时 write_got 里直接存放的是真实地址，那么我认为 r_offset 保持的不是真实地址，而是第一次调用时需要的偏移（那么我们再构造的时候用 write_got 是不是就有问题，因为感觉不是第一次调用得到的偏移）&lt;/p&gt;
+&lt;h2 id=&#34;注意的点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#注意的点&#34;&gt;#&lt;/a&gt; 注意的点&lt;/h2&gt;
+&lt;p&gt;.dynsym 结构体下标以 0 开始 (其实就是除了 plt 之外其他的结构体但是从 0 开始的，因为 plt0 相当于作为头部了)&lt;/p&gt;
+&lt;p&gt;flat 函数是 pwn 模块的功能：将多个变量转化为二进制字符串&lt;/p&gt;
+&lt;p&gt;payload=pwn.flat([v1,v2,v3])&lt;/p&gt;
+&lt;p&gt;v1,v2,v3 是加入到 payload 的变量，相当于 v1+v2+v3&lt;/p&gt;
+&lt;h1 id=&#34;还要注意&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#还要注意&#34;&gt;#&lt;/a&gt; 还要注意&lt;/h1&gt;
+&lt;p&gt;我们执行的 plt [0] 等，需要是在迁移后的栈上执行，这里直接覆盖 ret 貌似有点问题&lt;/p&gt;
+&lt;h1 id=&#34;4例题pwn82&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4例题pwn82&#34;&gt;#&lt;/a&gt; 4. 例题（pwn82）&lt;/h1&gt;
+&lt;h2 id=&#34;1程序信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1程序信息&#34;&gt;#&lt;/a&gt; 1. 程序信息：&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/ctfshow/1GWJ%25618SAICLB%7B%24K%25%299G2V.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;main()函数&lt;/code&gt; ：&lt;br /&gt;
+&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/ctfshow/%29%5D783B7I%246R%7D6OMAM06%5BKAG.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;show()函数：&lt;/code&gt; &lt;br /&gt;
+&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/ctfshow/8ZK%40%7BDO%24LJ1R%5D0H4H9ODK6T.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;可以看到 read 函数能溢出，因为这道题有 write 函数，所以我们可以利用 ret2libc，但是这里换个方式用 &lt;code&gt;ret2dlresolve&lt;/code&gt;  解决&lt;/p&gt;
+&lt;h2 id=&#34;2分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2分析&#34;&gt;#&lt;/a&gt; 2. 分析&lt;/h2&gt;
+&lt;p&gt;通过上面的原理我们知道，需要构造一系列的结构体然后利用 &lt;code&gt;_dl_runtime_resolve&lt;/code&gt;  的第二个参数 &lt;code&gt;reloc_index&lt;/code&gt;  来最终通过构造的结构体找到想执行的函数名去解析 执行&lt;/p&gt;
+&lt;p&gt;而由于我们的构造的结构体内容需要指向后面构造的内容所以我们可以从后往前构造：&lt;/p&gt;
+&lt;h3 id=&#34;1首先确定name_offset&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1首先确定name_offset&#34;&gt;#&lt;/a&gt; 1. 首先确定 &lt;code&gt;name_offset&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/ctfshow/DSOYLEN9%5B162E3F2RRGJ%5BMA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;将构造的 &lt;code&gt;system&lt;/code&gt;  输入到 bss 段上&lt;/p&gt;
+&lt;p&gt;b&amp;quot;a&amp;quot;+read+p32(0)+p32(0x804+4)+p32(4)+read(0,98e0,len(dynstr))+read(0,8e0+0x100,len(&amp;quot;/bin/sh&amp;quot;))+p32(0x8048376 plt0)+p32(0xdeadbeff)+p32(0x80498e0+0x100)&lt;/p&gt;
+</content>
+        <category term="ret2dlresolve" />
+        <updated>2023-10-01T06:15:56.000Z</updated>
+    </entry>
+</feed>

@@ -7,23 +7,25 @@
     <category term="pwn" />
     <category term="Linux" />
     <category term="Java" />
-    <category term="Apache" />
     <category term="二进制" />
+    <category term="Apache" />
     <category term="报错" />
     <category term="xss" />
     <category term="sql" />
+    <category term="web" />
     <category term="C++" />
     <category term="C语言" />
     <category term="windows" />
     <category term="渗透" />
-    <category term="ret2csu" />
     <category term="phppwn" />
     <category term="ctf" />
     <category term="how2heap" />
+    <category term="ret2csu" />
+    <category term="ret2dlresolve" />
+    <category term="nc" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
-    <category term="nc" />
     <entry>
         <id>https://vvwwvv.cn/2023/10/05/Linux/large_bin_attack/</id>
         <title>large bin attack（为house利用系列打下基础）</title>

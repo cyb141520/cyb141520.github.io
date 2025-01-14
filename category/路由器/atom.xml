@@ -7,23 +7,25 @@
     <category term="pwn" />
     <category term="Linux" />
     <category term="Java" />
-    <category term="Apache" />
     <category term="二进制" />
+    <category term="Apache" />
     <category term="报错" />
     <category term="xss" />
     <category term="sql" />
+    <category term="web" />
     <category term="C++" />
     <category term="C语言" />
     <category term="windows" />
     <category term="渗透" />
-    <category term="ret2csu" />
     <category term="phppwn" />
     <category term="ctf" />
     <category term="how2heap" />
+    <category term="ret2csu" />
+    <category term="ret2dlresolve" />
+    <category term="nc" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
-    <category term="nc" />
     <entry>
         <id>https://vvwwvv.cn/2023/09/30/pwn/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%BC%8F%E6%B4%9E/DVRF%E5%AD%A6%E4%B9%A0/</id>
         <title>利用DVRF学习固件分析</title>
