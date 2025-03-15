@@ -12,19 +12,19 @@
         <category>Linux</category>
         <category>二进制</category>
         <category>Apache</category>
-        <category>xss</category>
-        <category>sql</category>
         <category>报错</category>
-        <category>web</category>
         <category>C++</category>
         <category>C语言</category>
         <category>windows</category>
         <category>渗透</category>
-        <category>how2heap</category>
-        <category>ret2csu</category>
-        <category>ret2dlresolve</category>
+        <category>xss</category>
+        <category>sql</category>
+        <category>web</category>
         <category>phppwn</category>
         <category>ctf</category>
+        <category>ret2csu</category>
+        <category>how2heap</category>
+        <category>ret2dlresolve</category>
         <category>fastbin.attack</category>
         <category>系统调用</category>
         <category>rop</category>
@@ -98,7 +98,7 @@ allocate(0x80)  index4
 free（2）
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;【注意修改 glibc 版本】&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;patchelf --set-interpreter ~/pwn/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/ld-2.23.so --set-rpath ~/Tools/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/ ~/Downloads/buuctf/babyheap_0ctf_2017
+&lt;pre&gt;&lt;code&gt;patchelf --set-interpreter ~/pwn/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/ld-2.23.so --set-rpath ~/pwn/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/ ~/Downloads/buuctf/babyheap_0ctf_2017
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;查看此时的堆（glibc 2.26 版本以后会不一样），可以发现地址都是对齐的：&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://z1.ax1x.com/2023/09/13/pPRAMSP.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
