@@ -13,26 +13,26 @@
         <category>二进制</category>
         <category>Apache</category>
         <category>报错</category>
+        <category>xss</category>
+        <category>sql</category>
+        <category>web</category>
         <category>C++</category>
         <category>C语言</category>
         <category>windows</category>
         <category>渗透</category>
-        <category>xss</category>
-        <category>sql</category>
-        <category>web</category>
         <category>phppwn</category>
         <category>ctf</category>
-        <category>ret2csu</category>
         <category>how2heap</category>
+        <category>ret2csu</category>
         <category>ret2dlresolve</category>
         <category>fastbin.attack</category>
         <category>系统调用</category>
         <category>rop</category>
         <category>nc</category>
         <item>
-            <guid isPermalink="true">https://vvwwvv.cn/2023/10/16/Linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/</guid>
+            <guid isPermalink="true">https://vvwwvv.cn/2023/10/16/Linux/linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/</guid>
             <title>Linux命令与shell脚本（Linux课程考核）</title>
-            <link>https://vvwwvv.cn/2023/10/16/Linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/</link>
+            <link>https://vvwwvv.cn/2023/10/16/Linux/linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/</link>
             <category>Linux</category>
             <pubDate>Mon, 16 Oct 2023 20:05:56 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;1基础命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1基础命令&#34;&gt;#&lt;/a&gt; 1. 基础命令&lt;/h1&gt;

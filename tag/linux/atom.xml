@@ -10,26 +10,26 @@
     <category term="二进制" />
     <category term="Apache" />
     <category term="报错" />
+    <category term="xss" />
+    <category term="sql" />
+    <category term="web" />
     <category term="C++" />
     <category term="C语言" />
     <category term="windows" />
     <category term="渗透" />
-    <category term="xss" />
-    <category term="sql" />
-    <category term="web" />
     <category term="phppwn" />
     <category term="ctf" />
-    <category term="ret2csu" />
     <category term="how2heap" />
+    <category term="ret2csu" />
     <category term="ret2dlresolve" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
     <category term="nc" />
     <entry>
-        <id>https://vvwwvv.cn/2023/10/16/Linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/</id>
+        <id>https://vvwwvv.cn/2023/10/16/Linux/linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/</id>
         <title>Linux命令与shell脚本（Linux课程考核）</title>
-        <link rel="alternate" href="https://vvwwvv.cn/2023/10/16/Linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/"/>
+        <link rel="alternate" href="https://vvwwvv.cn/2023/10/16/Linux/linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/"/>
         <content type="html">&lt;h1 id=&#34;1基础命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1基础命令&#34;&gt;#&lt;/a&gt; 1. 基础命令&lt;/h1&gt;
 &lt;h2 id=&#34;1-ls命令查看当前目录文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-ls命令查看当前目录文件&#34;&gt;#&lt;/a&gt; 1. ls 命令（查看当前目录文件）&lt;/h2&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://vvwwv.oss-cn-nanjing.aliyuncs.com/%7BRP%28%7D1S1RI%7EZCB%5DP%24PO8R%5DR.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
