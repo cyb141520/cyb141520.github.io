@@ -4,28 +4,28 @@
     <title>此时相望不相闻，愿逐月华流照君 • Posts by &#34;格式化字符串漏洞&#34; category</title>
     <link href="https://vvwwvv.cn" />
     <updated>2023-09-12T13:08:15.000Z</updated>
+    <category term="Java" />
     <category term="pwn" />
     <category term="Linux" />
-    <category term="Java" />
-    <category term="二进制" />
     <category term="Apache" />
+    <category term="二进制" />
     <category term="报错" />
-    <category term="C++" />
-    <category term="C语言" />
     <category term="xss" />
     <category term="sql" />
     <category term="web" />
+    <category term="C++" />
+    <category term="C语言" />
     <category term="windows" />
     <category term="渗透" />
+    <category term="how2heap" />
+    <category term="ret2csu" />
+    <category term="ret2dlresolve" />
     <category term="phppwn" />
     <category term="ctf" />
-    <category term="how2heap" />
-    <category term="ret2dlresolve" />
-    <category term="ret2csu" />
-    <category term="nc" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
+    <category term="nc" />
     <entry>
         <id>https://vvwwvv.cn/2023/09/12/pwn/%E5%88%B7%E9%A2%98/BUUCTF/bjdctf_2020_babyrop2/</id>
         <title>bjdctf_2020_babyrop2（格式化字符串漏洞）</title>
