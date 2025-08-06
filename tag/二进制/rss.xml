@@ -8,22 +8,22 @@
         <pubDate>Mon, 06 Nov 2023 19:23:15 +0800</pubDate>
         <lastBuildDate>Mon, 06 Nov 2023 19:23:15 +0800</lastBuildDate>
         <category>Java</category>
-        <category>Linux</category>
-        <category>Apache</category>
         <category>pwn</category>
+        <category>Linux</category>
         <category>二进制</category>
+        <category>Apache</category>
         <category>报错</category>
         <category>C++</category>
         <category>C语言</category>
+        <category>windows</category>
+        <category>渗透</category>
         <category>xss</category>
         <category>sql</category>
         <category>web</category>
-        <category>windows</category>
-        <category>渗透</category>
         <category>phppwn</category>
         <category>ctf</category>
-        <category>ret2csu</category>
         <category>how2heap</category>
+        <category>ret2csu</category>
         <category>ret2dlresolve</category>
         <category>fastbin.attack</category>
         <category>系统调用</category>
@@ -68,8 +68,8 @@
             <guid isPermalink="true">https://vvwwvv.cn/2023/10/02/pwn/%E4%B8%93%E6%A0%8F/%E5%A0%86%E5%88%A9%E7%94%A8%E4%B9%8Bunlink/</guid>
             <title>堆利用之unlink（例题：hitcon2014_stkof）</title>
             <link>https://vvwwvv.cn/2023/10/02/pwn/%E4%B8%93%E6%A0%8F/%E5%A0%86%E5%88%A9%E7%94%A8%E4%B9%8Bunlink/</link>
-            <category>Linux</category>
             <category>pwn</category>
+            <category>Linux</category>
             <category>二进制</category>
             <pubDate>Mon, 02 Oct 2023 14:15:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;libc 源码下载：&lt;/p&gt;
@@ -173,8 +173,8 @@ BK-&amp;gt;fd = FD   并且  FD=P-&amp;gt;fd
             <guid isPermalink="true">https://vvwwvv.cn/2023/10/01/pwn/%E4%B8%93%E6%A0%8F/%E5%A0%86%E5%88%A9%E7%94%A8%E4%B9%8BUAF/</guid>
             <title>堆利用之UAF（use after free）</title>
             <link>https://vvwwvv.cn/2023/10/01/pwn/%E4%B8%93%E6%A0%8F/%E5%A0%86%E5%88%A9%E7%94%A8%E4%B9%8BUAF/</link>
-            <category>Linux</category>
             <category>pwn</category>
+            <category>Linux</category>
             <category>二进制</category>
             <pubDate>Sun, 01 Oct 2023 14:15:56 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;1漏洞原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1漏洞原因&#34;&gt;#&lt;/a&gt; 1. 漏洞原因&lt;/h1&gt;
@@ -342,8 +342,8 @@ sudo apt-get install qemu-system
             <guid isPermalink="true">https://vvwwvv.cn/2023/09/28/pwn/%E4%B8%93%E6%A0%8F/%E6%A0%88%E8%BF%81%E7%A7%BB/</guid>
             <title>栈迁移</title>
             <link>https://vvwwvv.cn/2023/09/28/pwn/%E4%B8%93%E6%A0%8F/%E6%A0%88%E8%BF%81%E7%A7%BB/</link>
-            <category>Linux</category>
             <category>pwn</category>
+            <category>Linux</category>
             <category>二进制</category>
             <pubDate>Thu, 28 Sep 2023 14:15:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;（之前写的没保存，这是第二遍写，我要杀人...）&lt;/p&gt;
@@ -405,8 +405,8 @@ pop   ebp       #执行pop时，ebp出栈，并且将esp地址内的值放入ebp
             <guid isPermalink="true">https://vvwwvv.cn/2023/09/25/pwn/%E4%B8%93%E6%A0%8F/%E6%95%B4%E6%95%B0%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/</guid>
             <title>整数安全漏洞</title>
             <link>https://vvwwvv.cn/2023/09/25/pwn/%E4%B8%93%E6%A0%8F/%E6%95%B4%E6%95%B0%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/</link>
-            <category>Linux</category>
             <category>pwn</category>
+            <category>Linux</category>
             <category>二进制</category>
             <pubDate>Mon, 25 Sep 2023 20:15:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;内容参考了《CTF 竞赛权威指南 Pwn 篇》&lt;/p&gt;
@@ -438,8 +438,8 @@ pop   ebp       #执行pop时，ebp出栈，并且将esp地址内的值放入ebp
             <guid isPermalink="true">https://vvwwvv.cn/2023/09/19/Linux/Linux%E5%91%BD%E4%BB%A4%E5%92%8C%E5%87%BD%E6%95%B0/</guid>
             <title>Linux(shell)命令和函数</title>
             <link>https://vvwwvv.cn/2023/09/19/Linux/Linux%E5%91%BD%E4%BB%A4%E5%92%8C%E5%87%BD%E6%95%B0/</link>
-            <category>Linux</category>
             <category>pwn</category>
+            <category>Linux</category>
             <category>二进制</category>
             <pubDate>Tue, 19 Sep 2023 20:05:56 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;1linux执行多个命令shell命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1linux执行多个命令shell命令&#34;&gt;#&lt;/a&gt; 1.Linux 执行多个命令（shell 命令）&lt;/h1&gt;
@@ -548,8 +548,8 @@ pause()  #
             <guid isPermalink="true">https://vvwwvv.cn/2023/08/29/Linux/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</guid>
             <title>Linux之系统调用</title>
             <link>https://vvwwvv.cn/2023/08/29/Linux/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
-            <category>Linux</category>
             <category>pwn</category>
+            <category>Linux</category>
             <category>二进制</category>
             <pubDate>Tue, 29 Aug 2023 20:15:56 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;一系统调用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一系统调用&#34;&gt;#&lt;/a&gt; 一。系统调用&lt;/h1&gt;
@@ -735,8 +735,8 @@ seccomp-tools dump ./pwn&lt;/p&gt;
             <guid isPermalink="true">https://vvwwvv.cn/2023/08/24/pwn/%E5%A0%86/%E5%A0%86/</guid>
             <title>堆</title>
             <link>https://vvwwvv.cn/2023/08/24/pwn/%E5%A0%86/%E5%A0%86/</link>
-            <category>Linux</category>
             <category>pwn</category>
+            <category>Linux</category>
             <category>二进制</category>
             <pubDate>Thu, 24 Aug 2023 20:15:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;chunk 的 p 位设为 1 即上一个 chunk 被使用并且上一个 chunk 可以使用 pre_size 的空间  （用来储存前一个物理相邻的 chunk 的数据 ，（两个都空闲才合并）&lt;/p&gt;
