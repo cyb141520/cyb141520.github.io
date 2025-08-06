@@ -9,23 +9,23 @@
     <category term="Linux" />
     <category term="二进制" />
     <category term="Apache" />
+    <category term="报错" />
     <category term="xss" />
     <category term="sql" />
-    <category term="报错" />
     <category term="web" />
-    <category term="windows" />
-    <category term="渗透" />
     <category term="C++" />
     <category term="C语言" />
-    <category term="phppwn" />
-    <category term="ctf" />
+    <category term="windows" />
+    <category term="渗透" />
     <category term="how2heap" />
     <category term="ret2csu" />
     <category term="ret2dlresolve" />
-    <category term="nc" />
+    <category term="phppwn" />
+    <category term="ctf" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
+    <category term="nc" />
     <entry>
         <id>https://vvwwvv.cn/2023/09/30/pwn/%E5%88%B7%E9%A2%98/BUUCTF/inndy_rop/</id>
         <title>inndy_rop（rop和系统调用）</title>
@@ -167,8 +167,8 @@ read：read(0,写入地址，写入字节数)
 &lt;p&gt;参考链接 ret2csu：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3QuY3Nkbi5jbi9ESXFZdg==&#34;&gt;http://t.csdn.cn/DIqYv&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="pwn" />
-        <category term="ctf" />
         <category term="ret2csu" />
+        <category term="ctf" />
         <updated>2023-05-04T11:33:55.000Z</updated>
     </entry>
 </feed>
