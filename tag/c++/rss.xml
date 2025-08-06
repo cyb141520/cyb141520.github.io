@@ -15,20 +15,20 @@
         <category>报错</category>
         <category>C++</category>
         <category>C语言</category>
-        <category>windows</category>
-        <category>渗透</category>
         <category>xss</category>
         <category>sql</category>
+        <category>windows</category>
+        <category>渗透</category>
         <category>web</category>
+        <category>how2heap</category>
+        <category>ret2dlresolve</category>
+        <category>ret2csu</category>
         <category>phppwn</category>
         <category>ctf</category>
-        <category>how2heap</category>
-        <category>ret2csu</category>
-        <category>ret2dlresolve</category>
+        <category>nc</category>
         <category>fastbin.attack</category>
         <category>系统调用</category>
         <category>rop</category>
-        <category>nc</category>
         <item>
             <guid isPermalink="true">https://vvwwvv.cn/2023/10/15/pwn/c++%E5%87%BD%E6%95%B0%E5%8F%8A%E6%A8%A1%E6%9D%BF%E7%B1%BB/</guid>
             <title>C++函数及模板</title>

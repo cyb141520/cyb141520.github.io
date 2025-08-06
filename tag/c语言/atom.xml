@@ -12,20 +12,20 @@
     <category term="报错" />
     <category term="C++" />
     <category term="C语言" />
-    <category term="windows" />
-    <category term="渗透" />
     <category term="xss" />
     <category term="sql" />
+    <category term="windows" />
+    <category term="渗透" />
     <category term="web" />
+    <category term="how2heap" />
+    <category term="ret2dlresolve" />
+    <category term="ret2csu" />
     <category term="phppwn" />
     <category term="ctf" />
-    <category term="how2heap" />
-    <category term="ret2csu" />
-    <category term="ret2dlresolve" />
+    <category term="nc" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
-    <category term="nc" />
     <entry>
         <id>https://vvwwvv.cn/2023/08/24/pwn/c%E5%87%BD%E6%95%B0%E5%8F%8A%E6%BC%8F%E6%B4%9E/</id>
         <title>C语言函数（及漏洞利用）</title>

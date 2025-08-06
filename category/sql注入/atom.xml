@@ -12,20 +12,20 @@
     <category term="报错" />
     <category term="C++" />
     <category term="C语言" />
-    <category term="windows" />
-    <category term="渗透" />
     <category term="xss" />
     <category term="sql" />
+    <category term="windows" />
+    <category term="渗透" />
     <category term="web" />
+    <category term="how2heap" />
+    <category term="ret2dlresolve" />
+    <category term="ret2csu" />
     <category term="phppwn" />
     <category term="ctf" />
-    <category term="how2heap" />
-    <category term="ret2csu" />
-    <category term="ret2dlresolve" />
+    <category term="nc" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
-    <category term="nc" />
     <entry>
         <id>https://vvwwvv.cn/2025/01/11/web/ctfshow_web(SQL%E6%B3%A8%E5%85%A5)/</id>
         <title>ctfshow_web_()</title>

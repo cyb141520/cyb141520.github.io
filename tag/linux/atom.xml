@@ -12,20 +12,20 @@
     <category term="报错" />
     <category term="C++" />
     <category term="C语言" />
-    <category term="windows" />
-    <category term="渗透" />
     <category term="xss" />
     <category term="sql" />
+    <category term="windows" />
+    <category term="渗透" />
     <category term="web" />
+    <category term="how2heap" />
+    <category term="ret2dlresolve" />
+    <category term="ret2csu" />
     <category term="phppwn" />
     <category term="ctf" />
-    <category term="how2heap" />
-    <category term="ret2csu" />
-    <category term="ret2dlresolve" />
+    <category term="nc" />
     <category term="fastbin.attack" />
     <category term="系统调用" />
     <category term="rop" />
-    <category term="nc" />
     <entry>
         <id>https://vvwwvv.cn/2023/10/16/Linux/linux/Linux%E8%80%83%E6%A0%B8%E5%91%BD%E4%BB%A4%E4%B8%8Eshell/</id>
         <title>Linux命令与shell脚本（Linux课程考核）</title>
