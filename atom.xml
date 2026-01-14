@@ -997,9 +997,12 @@ victim_chunk=0x555555759000
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
-        <category term="how2heap2.23" scheme="https://cyb141520.github.io/categories/how2heap2-23/" />
-        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/how2heap2-23/PWN%E4%B8%93%E6%A0%8F/" />
+        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
+        <category term="how2heap" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/how2heap/" />
+        <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
         <category term="how2heap" scheme="https://cyb141520.github.io/tags/how2heap/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-10-19T11:23:15.000Z</updated>
     </entry>
     <entry>
@@ -1989,9 +1992,12 @@ largechunk使用fd_nextsize、bk_nextsize连接起来的。
 &lt;p&gt;&lt;a href=&#34;https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/house-of-einherjar/&#34;&gt;https://ctf-wiki.org/pwn/linux/user-mode/heap/ptmalloc2/house-of-einherjar/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;code&gt;house_of_force&lt;/code&gt;参考]：&lt;a href=&#34;https://www.cnblogs.com/ZIKH26/articles/16533388.html&#34;&gt;https://www.cnblogs.com/ZIKH26/articles/16533388.html&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="how2heap2.23" scheme="https://cyb141520.github.io/categories/how2heap2-23/" />
-        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/how2heap2-23/PWN%E4%B8%93%E6%A0%8F/" />
+        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
+        <category term="how2heap" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/how2heap/" />
+        <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
         <category term="how2heap" scheme="https://cyb141520.github.io/tags/how2heap/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-10-19T11:23:15.000Z</updated>
     </entry>
     <entry>
@@ -2024,11 +2030,9 @@ largechunk使用fd_nextsize、bk_nextsize连接起来的。
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/Spider-spiders/p/8798628.html&#34;&gt;https://www.cnblogs.com/Spider-spiders/p/8798628.html&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
-        <category term="CTF" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" />
-        <category term="Linux" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/Linux/" />
-        <category term="FORTIFY" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/Linux/FORTIFY/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
-        <category term="Linux" scheme="https://cyb141520.github.io/tags/Linux/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-10-07T06:15:56.000Z</updated>
     </entry>
     <entry>
@@ -2200,11 +2204,11 @@ fake_chunk2的fd（stack2）的值改为了victim的地址&lt;/p&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
-        <category term="CTF" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" />
-        <category term="Linux" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/Linux/" />
-        <category term="large bin attack" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/Linux/large-bin-attack/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
+        <category term="堆利用" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/%E5%A0%86%E5%88%A9%E7%94%A8/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
-        <category term="Linux" scheme="https://cyb141520.github.io/tags/Linux/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
+        <category term="堆利用" scheme="https://cyb141520.github.io/tags/%E5%A0%86%E5%88%A9%E7%94%A8/" />
         <updated>2023-10-05T06:15:56.000Z</updated>
     </entry>
     <entry>
@@ -2261,11 +2265,9 @@ show disable-randomization
 &lt;p&gt;&lt;a href=&#34;https://www.mrskye.cn/archives/9058dffc/#%E5%BC%80%E5%90%AF-PIE&#34;&gt;https://www.mrskye.cn/archives/9058dffc/#开启-PIE&lt;/a&gt;&lt;/p&gt;
 </content>
         <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
-        <category term="CTF" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" />
-        <category term="Linux" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/Linux/" />
-        <category term="ASLR" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/Linux/ASLR/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
-        <category term="Linux" scheme="https://cyb141520.github.io/tags/Linux/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-10-04T06:15:56.000Z</updated>
     </entry>
     <entry>
@@ -2447,16 +2449,29 @@ show disable-randomization
 &lt;p&gt;b&amp;quot;a&amp;quot;+read+p32(0)+p32(0x804+4)+p32(4)+read(0,98e0,len(dynstr))+read(0,8e0+0x100,len(&amp;quot;/bin/sh&amp;quot;))+p32(0x8048376 plt0)+p32(0xdeadbeff)+p32(0x80498e0+0x100)&lt;/p&gt;
 </content>
         <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
-        <category term="CTF" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" />
-        <category term="栈溢出" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/%E6%A0%88%E6%BA%A2%E5%87%BA/" />
-        <category term="ret2dlresolve" scheme="https://cyb141520.github.io/tags/ret2dlresolve/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
+        <category term="ROP" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/ROP/" />
+        <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-10-01T06:15:56.000Z</updated>
     </entry>
     <entry>
         <id>https://cyb141520.github.io/2023/09/28/pwn%E4%B8%93%E6%A0%8F/%E6%A0%88%E8%BF%81%E7%A7%BB/</id>
         <title>栈迁移</title>
         <link rel="alternate" href="https://cyb141520.github.io/2023/09/28/pwn%E4%B8%93%E6%A0%8F/%E6%A0%88%E8%BF%81%E7%A7%BB/"/>
-        <content type="html">&lt;p&gt;（之前写的没保存，这是第二遍写，我要杀人...）&lt;/p&gt;
+        <content type="html">&lt;p&gt;title: 栈迁移&lt;br /&gt;
+date: 2023-09-28 14:15:56&lt;br /&gt;
+categories:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- PWN专栏
+    - CTF
+  tags: 
+    - pwn
+    - 二进制
+
+- Linux
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;（之前写的没保存，这是第二遍写，我要杀人...）&lt;/p&gt;
 &lt;h1 id=&#34;栈的结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#栈的结构&#34;&gt;#&lt;/a&gt; 栈的结构&lt;/h1&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://z1.ax1x.com/2023/09/28/pPb4Xp8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h1 id=&#34;栈迁移的应用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#栈迁移的应用场景&#34;&gt;#&lt;/a&gt; 栈迁移的应用场景&lt;/h1&gt;
@@ -2511,10 +2526,9 @@ pop   ebp       #执行pop时，ebp出栈，并且将esp地址内的值放入ebp
 &lt;p&gt;这样我们就完成了栈迁移&lt;/p&gt;
 </content>
         <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
-        <category term="CTF" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
-        <category term="Linux" scheme="https://cyb141520.github.io/tags/Linux/" />
-        <category term="二进制" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-09-28T06:15:56.000Z</updated>
     </entry>
     <entry>
@@ -2552,12 +2566,10 @@ write函数是最理想的，因为write函数的特点在于其输出完全由�
 &lt;p&gt;参考：&lt;br /&gt;
 &lt;a href=&#34;https://blog.csdn.net/qq_40827990/article/details/86689760&#34;&gt;https://blog.csdn.net/qq_40827990/article/details/86689760&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="Linux" scheme="https://cyb141520.github.io/categories/Linux/" />
-        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/Linux/PWN%E4%B8%93%E6%A0%8F/" />
-        <category term="CTF" scheme="https://cyb141520.github.io/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/" />
-        <category term="DynELF" scheme="https://cyb141520.github.io/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/DynELF/" />
+        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
-        <category term="二进制" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-08-29T12:15:56.000Z</updated>
     </entry>
     <entry>
@@ -2737,12 +2749,11 @@ seccomp-tools dump ./pwn&lt;/p&gt;
 &lt;p&gt;参考：&lt;br /&gt;
 &lt;a href=&#34;https://zhuanlan.zhihu.com/p/363174561&#34;&gt;https://zhuanlan.zhihu.com/p/363174561&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="Linux" scheme="https://cyb141520.github.io/categories/Linux/" />
-        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/Linux/PWN%E4%B8%93%E6%A0%8F/" />
-        <category term="CTF" scheme="https://cyb141520.github.io/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/" />
-        <category term="沙盒" scheme="https://cyb141520.github.io/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/%E6%B2%99%E7%9B%92/" />
+        <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
+        <category term="沙盒" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/%E6%B2%99%E7%9B%92/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
-        <category term="二进制" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-08-29T12:15:56.000Z</updated>
     </entry>
     <entry>
@@ -2816,8 +2827,10 @@ seccomp-tools dump ./pwn&lt;/p&gt;
         <category term="CTF" scheme="https://cyb141520.github.io/categories/CTF/" />
         <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/CTF/PWN%E4%B8%93%E6%A0%8F/" />
         <category term="ROP" scheme="https://cyb141520.github.io/categories/CTF/PWN%E4%B8%93%E6%A0%8F/ROP/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/categories/CTF/PWN%E4%B8%93%E6%A0%8F/ROP/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
         <category term="ret2csu" scheme="https://cyb141520.github.io/tags/ret2csu/" />
+        <category term="二进制安全" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" />
         <updated>2023-08-24T11:23:15.000Z</updated>
     </entry>
     <entry>
