@@ -2513,8 +2513,8 @@ pop   ebp       #执行pop时，ebp出栈，并且将esp地址内的值放入ebp
         <category term="PWN专栏" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/" />
         <category term="CTF" scheme="https://cyb141520.github.io/categories/PWN%E4%B8%93%E6%A0%8F/CTF/" />
         <category term="pwn" scheme="https://cyb141520.github.io/tags/pwn/" />
-        <category term="二进制" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" />
         <category term="Linux" scheme="https://cyb141520.github.io/tags/Linux/" />
+        <category term="二进制" scheme="https://cyb141520.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" />
         <updated>2023-09-28T06:15:56.000Z</updated>
     </entry>
     <entry>
