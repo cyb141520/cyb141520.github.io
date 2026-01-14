@@ -1037,8 +1037,7 @@ victim_chunk=0x555555759000
 &lt;p&gt;这个就没有报错&lt;/p&gt;
 &lt;h1 id=&#34;bin的大小及合并&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bin的大小及合并&#34;&gt;#&lt;/a&gt; bin的大小及合并：&lt;/h1&gt;
 &lt;h2 id=&#34;fast-bin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#fast-bin&#34;&gt;#&lt;/a&gt; fast bin&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;从0x20到0x80(64位,大小不是malloc时的大小，而是在内存中struct malloc_chunk的大小，包含前2个成员)，且在放进fsatbin中不会进行合并也就是他的prev_insuer一直为零
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;从0x20到0x80&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;64位,大小不是malloc时的大小，而是在内存中struct malloc_chunk的大小，包含前2个成员&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;，且在放进fsatbin中不会进行合并也就是他的prev_insuer一直为零&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;合并时机：&lt;/p&gt;
 &lt;p&gt;fastbin会在以下情况下进行合并（合并是对所有fastbin中的chunk而言）。&lt;br /&gt;
 malloc：&lt;/p&gt;
@@ -1051,24 +1050,21 @@ free：&lt;/li&gt;
 &lt;p&gt;另外：malloc_consolidate既可以作为fastbin的初始化函数，也可以作为fastbin的合并函数。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://bbs.kanxue.com/thread-257742.htm&#34;&gt;https://bbs.kanxue.com/thread-257742.htm&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;smallbin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#smallbin&#34;&gt;#&lt;/a&gt; smallbin&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;小于1024字节（0x400）的chunk称之为small chunk，small bin就是用于管理small chunk的。
-
-small bin链表的个数为62个。
-
-就内存的分配和释放速度而言，small bin比larger bin快，但比fast bin慢。
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;小于1024字节（0x400）的chunk称之为small chunk，small bin就是用于管理small chunk的。&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;small bin链表的个数为62个。&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;就内存的分配和释放速度而言，small bin比larger bin快，但比fast bin慢。&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;合并操作：&lt;/p&gt;
 &lt;p&gt;相邻的free chunk需要进行合并操作，即合并成一个大的free chunk&lt;/p&gt;
 &lt;p&gt;free操作&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;small的free比较特殊。当释放small chunk的时候，先检查该chunk相邻的chunk是否为free，如果是的话就进行合并操作：将这些chunks合并成新的chunk，然后将它们从small bin中移除，最后将新的chunk添加到unsorted bin中，之后unsorted bin进行整理再添加到对应的bin链上（后面会有图介绍）。
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;small的free比较特殊。当释放small chunk的时候，先检查该chunk相邻的chunk是否为free，如果是的话就进行合并操作：将这些chunks合并成新的chunk，然后将它们从small bin中移除，最后将新的chunk添加到unsorted bin中，之后unsorted bin进行整理再添加到对应的bin链上（后面会有图介绍）。&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;largebin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#largebin&#34;&gt;#&lt;/a&gt; largebin&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;大于等于1024字节（0x400）的chunk称之为large chunk，large bin就是用于管理这些largechunk的。
-
-large bin链表的个数为63个，被分为6组。
-
-largechunk使用fd_nextsize、bk_nextsize连接起来的。
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;大于等于1024字节（0x400）的chunk称之为large chunk，large bin就是用于管理这些largechunk的。&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;large bin链表的个数为63个，被分为6组。&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;largechunk使用fd_nextsize、bk_nextsize连接起来的。&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;合并操作：类似于small bin&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/trunk/p/16863185.html&#34;&gt;https://www.cnblogs.com/trunk/p/16863185.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_41453285/article/details/96865321&#34;&gt;https://blog.csdn.net/qq_41453285/article/details/96865321&lt;/a&gt;&lt;/p&gt;
@@ -1129,10 +1125,9 @@ largechunk使用fd_nextsize、bk_nextsize连接起来的。
 &lt;p&gt;这里就发现了，将已经释放过的chunk a再次释放，就会导致被再次添加到fastbin中（原本a第一次进入fastbin中没有改变chunk 的结构），所以会被当作新释放的chunk来放入fastbin&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/how2heap/0XQ25GYB%40VN2%25HUB6K%40F%24JT.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h4 id=&#34;这里其实有个隐藏的问题为什么不直接连续释放两次chunk-a&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#这里其实有个隐藏的问题为什么不直接连续释放两次chunk-a&#34;&gt;#&lt;/a&gt; 这里其实有个隐藏的问题：为什么不直接连续释放两次chunk a？&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;这里会有一个检测，指向新释放的chunk是main_arena(我写他为fastbin很便于理解)，再释放的时候仅仅验证了main_arena指向的chunk，第一次释放chunk a后，main_arena会指向chuank a，那么紧接着再次释放chunk a，会被通过检测main_arena指向的chunk给识别出来，导致错误
-
-这里在glibc2.23源码是：3935行
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-tex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;这里会有一个检测，指向新释放的chunk是main_arena&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;我写他为fastbin很便于理解&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;，再释放的时候仅仅验证了main_arena指向的chunk，第一次释放chunk a后，main_arena会指向chuank a，那么紧接着再次释放chunk a，会被通过检测main_arena指向的chunk给识别出来，导致错误&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;这里在glibc2.23源码是：3935行&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;__builtin_expect&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;old &lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; p&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt; 0&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#A0ADA0;--shiki-dark:#758575DD&#34;&gt;//if you release the same address twice，就报错double free错误&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;	  &lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;	    errstr &lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt; &#34;&lt;/span&gt;&lt;span style=&#34;color:#B56959;--shiki-dark:#C98A7D&#34;&gt;double free or corruption (fasttop)&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;
