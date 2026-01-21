@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1"><meta name="renderer" content="webkit"><link rel="icon" type="image/ico" sizes="32x32" href="/assets/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="alternate" href="/rss.xml" title="此时相望不相闻，愿逐月华流照君" type="application/rss+xml"><link rel="alternate" href="/atom.xml" title="此时相望不相闻，愿逐月华流照君" type="application/atom+xml"><link rel="alternate" type="application/json" title="此时相望不相闻，愿逐月华流照君" href="https://cyb141520.github.io/feed.json"><link rel="preconnect" href="https://s4.zstatic.net"><link rel="preconnect" href="https://at.alicdn.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CFredericka%20the%20Great:400,400italic,700,700italic%7CNoto%20Serif%20JP:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CInconsolata:400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext" media="none" onload="this.media='all'"><link rel="modulepreload" href="/js/siteInit.js"><link rel="modulepreload" href="/js/nyx-player-GAYVXOT2.js"><link rel="modulepreload" href="/js/copy-tex-ZB3YLK4M.js"><link rel="modulepreload" href="/js/post-IGXPDX6N.js"><link rel="modulepreload" href="/js/chunk-2MYORO2B.js"><link rel="modulepreload" href="/js/pagefind-U2ETNMP3.js"><link rel="modulepreload" href="/js/index.esm-LV2XXO35.js"><link rel="modulepreload" href="/js/chunk-HJSTZ4VX.js"><link rel="modulepreload" href="/js/chunk-QNA7Z54Y.js"><link rel="stylesheet" href="/css/siteInit.css" media="none" onload="this.media='all'"><link rel="preload" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/background/111.png" as="image" fetchpriority="high"><meta name="keywords" content="Android"><link rel="canonical" href="https://cyb141520.github.io/2026/01/10/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Apixel%E5%88%B7%E6%9C%BA/"><link rel="stylesheet" href="/css/post.css?v=0.5.4"><link rel="stylesheet" href="/css/mermaid.css?v=0.5.4"><!-- 临时处理--><link rel="stylesheet" media="none" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css"><title>安卓安全（一）：pixel刷机及root</title><meta name="generator" content="Hexo 7.3.0"></head><body itemscope="" itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="pagefind_mount"></div><div id="container"><header id="header" itemscope="" itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">安卓安全（一）：pixel刷机及root</h1><div class="meta"><span class="item" title="创建时间：2026-01-10 10:14:13"><span class="icon"><i class="ic i-calendar"></i></span><span class="text">发表于</span><time itemprop="dateCreated datePublished" datetime="2026-01-10T10:14:13+08:00">2026-01-10</time></span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i></span><span class="text">本文字数</span><span>12k</span><span class="text">字</span></span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i></span><span class="text">阅读时长</span><span>11 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span><span class="line"></span><span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">vvwwv</a></li></ul><ul class="right" id="rightNav"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div class="pjax" id="imgs"><img src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/background/111.png" loading="eager" decoding="async" fetchpriority="high" alt="此时相望不相闻，愿逐月华流照君"></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><main><div class="inner"><div class="pjax" id="main"><div class="article wrap"><div class="breadcrumb" itemlistelement="" itemscope="" itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i><span><a href="/">首页</a></span><i class="ic i-angle-right"></i><span class="current" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/categories/Android/" itemprop="item" rel="index" title="分类于Android"><span itemprop="name">Android<meta itemprop="position" content="0"></span></a></span></div><article class="post block" itemscope="itemscope" itemtype="http://schema.org/Article" data-pagefind-body="data-pagefind-body" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://cyb141520.github.io/2026/01/10/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Apixel%E5%88%B7%E6%9C%BA/"><span hidden="hidden" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><meta itemprop="image" content="/assets/avatar.jpg"><meta itemprop="name" content="vvwwv"><meta itemprop="description" content=", "></span><span hidden="hidden" itemprop="publisher" itemscope="itemscope" itemtype="http://schema.org/Organization"><meta itemprop="name" content="此时相望不相闻，愿逐月华流照君"></span><div class="body md" itemprop="articleBody"><h1 id="1adb和fastboot"><a class="anchor" href="#1adb和fastboot">#</a> 1.adb和<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=237030661&amp;content_type=Article&amp;match_order=1&amp;q=fastboot&amp;zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3NjcyNTQxNDYsInEiOiJmYXN0Ym9vdCIsInpoaWRhX3NvdXJjZSI6ImVudGl0eSIsImNvbnRlbnRfaWQiOjIzNzAzMDY2MSwiY29udGVudF90eXBlIjoiQXJ0aWNsZSIsIm1hdGNoX29yZGVyIjoxLCJ6ZF90b2tlbiI6bnVsbH0.8Khw27wv27nbCcr1GJduXJ8YctUopd_PZytrvxt20fA&amp;zhida_source=entity">fastboot</a></h1>
+<p>在刷机的过程中需要使用adb 和 fastboot命令来连接手机，并对手机下发相关指令。刷机前确保自己电脑上已有adb和fastboot。</p>
+<h2 id="11-platform-tools"><a class="anchor" href="#11-platform-tools">#</a> 1.1 platform-tools</h2>
+<p>下载platform-tools（压缩包）内部包含adb 和 fastboot。</p>
+<p>下载地址 <a href="https://link.zhihu.com/?target=https%3A//developer.android.google.cn/studio/releases/platform-tools">https://developer.android.google.cn</a></p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767081972712-d55ee19c-4757-4183-83ec-0d1fc0462252.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767081972712-d55ee19c-4757-4183-83ec-0d1fc0462252.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<h2 id="12-解压"><a class="anchor" href="#12-解压">#</a> 1.2 解压</h2>
+<p>platform-tools是一个压缩包，解压后就是一个普通的文件夹（内部包含adb、fastboot）。</p>
+<p>将解压后的文件夹拷贝到指定目录（当做安装目录），不要有中文路径。</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767083990788-2bdae676-b1d9-440b-869e-4a53a2318c16.png" alt="img"></p>
+<h2 id="13-环境变量"><a class="anchor" href="#13-环境变量">#</a> 1.3 环境变量</h2>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767084532059-6b0a7195-9d39-46c9-86e0-eaba6dbef812.png" alt="img"></p>
+<p>在主机的cmd中可以执行：</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767084610340-bb6d2e44-e013-44a8-91df-1039a38e6af8.png" alt="img"></p>
+<h2 id="14-测试adb和fastboot"><a class="anchor" href="#14-测试adb和fastboot">#</a> 1.4 测试adb和fastboot</h2>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-plain"><span class="line"><span>win系统：adb --version</span></span>
+<span class="line"><span>fastboot --version</span></span></code></pre>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767084728134-e6c67d63-b01c-4cf0-9506-386b9548a574.png" alt="img"></p>
+<h2 id="15-谷歌usb驱动"><a class="anchor" href="#15-谷歌usb驱动">#</a> 1.5 谷歌USB驱动</h2>
+<p>1.5.1 下载</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//developer.android.google.cn/studio/run/win-usb.html%3Fhl%3Dzh-cn">https://developer.android.google.cn</a></p>
+<p>单独下驱动程序压缩文件已经不行了</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767086205002-15f423ca-6864-4292-8b7b-551cf908d55a.png" alt="img"></p>
+<p>通过 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/intro/update?hl=zh-cn#sdk-manager">Android SDK 管理器</a>获取该驱动程序，具体操作步骤如下：</p>
+<ol>
+<li>在 Android Studio 中，依次点击 <strong>Tools &gt; SDK Manager</strong>。</li>
+</ol>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767088432208-630b626a-8153-4c14-bcb5-297d7ef9fdb0.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767088432208-630b626a-8153-4c14-bcb5-297d7ef9fdb0.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767088478653-367372fe-78ea-4a83-882a-387bb6cfab7d.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767088478653-367372fe-78ea-4a83-882a-387bb6cfab7d.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<p>设置SDK位置</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767088571443-72812281-aa0d-4aa1-9c7a-3f25b4c25a5c.png" alt="img"></p>
+<ol>
+<li>点击 <strong>SDK Tools</strong> 标签页。</li>
+</ol>
+<p>选中 <strong>Google USB Driver</strong>，然后点击 <strong>OK</strong>。</p>
+<p>安装软件包。完成后，驱动程序文件便会下载到 <code>**android_sdk**\extras\google\usb_driver\</code> 目录中。</p>
+<h2 id="16-连接手机"><a class="anchor" href="#16-连接手机">#</a> 1.6 连接手机</h2>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085100508-d5dbf982-33a1-40f2-a233-3701955e4ecd.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085100508-d5dbf982-33a1-40f2-a233-3701955e4ecd.png</a>" alt="img" style="zoom:33%;" /&gt;&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767085252191-0a230e2e-e2d1-4fc5-9fa4-34d1c2d78fa4.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767085252191-0a230e2e-e2d1-4fc5-9fa4-34d1c2d78fa4.png</a>" alt="img" style="zoom:33%;" /&gt;&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085021242-e7af221d-c3e0-4211-95cf-c69f9207e797.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085021242-e7af221d-c3e0-4211-95cf-c69f9207e797.png</a>" alt="img" style="zoom:33%;" /&gt;&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767085350848-532fdfaa-b4df-4297-820f-76511ef08fde.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767085350848-532fdfaa-b4df-4297-820f-76511ef08fde.png</a>" alt="img" style="zoom:33%;" /&gt;</p>
+<p>开启手机的USB调试，然后：</p>
+<ul>
+<li>用数据线连（官方线）接手机和电脑，会提示是否授权窗口，点击授权。</li>
+<li>尽量使用官方自带的数据线，不要用自己网上几块钱买的。</li>
+</ul>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085685470-f7db6bdd-e918-4d01-a4a4-81ea4280a625.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085685470-f7db6bdd-e918-4d01-a4a4-81ea4280a625.png</a>" alt="img" style="zoom:33%;" /&gt;&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085706098-8c66331f-8839-4f77-b4dc-9906eac65c92.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085706098-8c66331f-8839-4f77-b4dc-9906eac65c92.png</a>" alt="img" style="zoom:33%;" /&gt;</p>
+<ul>
+<li>打开终端输入 adb devices查看是否连接：</li>
+<li>win和mac系统：adb devices</li>
+</ul>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767085854633-8764e258-5d07-4f83-a57f-9e341fe9be19.png" alt="img"></p>
+<p>需要在手机里授权</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085934657-60f72a88-c395-4bac-80e8-052613909815.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767085934657-60f72a88-c395-4bac-80e8-052613909815.png</a>" alt="img" style="zoom:33%;" /&gt;</p>
+<p>下面的情况需要安装谷歌usb驱动：</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767086083127-3a6f5a2f-6f7e-4222-8d95-4c7701cf33a0.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767086083127-3a6f5a2f-6f7e-4222-8d95-4c7701cf33a0.png</a>" alt="img" style="zoom:33%;" /&gt;</p>
+<p>电脑命令行，输入指令“adb devices -l”，查看输出结果，就可以看到设备是否连接成功</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-shell"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">adb</span><span style="color:#B56959;--shiki-dark:#C98A7D"> devices</span><span style="color:#A65E2B;--shiki-dark:#C99076"> -l</span></span></code></pre>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767096717272-0438aaa4-093f-42dc-855a-7735b271395e.png" alt="img"></p>
+<p>作为“adb devices -l”的响应，adb 会针对每个设备输出以下状态信息：</p>
+<p>序列号：adb 会创建一个字符串，用于通过端口号唯一标识设备。下面是一个序列号示例：emulator-5554</p>
+<p>状态：设备的连接状态可以是以下几项之一：</p>
+<p>offline：设备未连接到 adb 或没有响应。</p>
+<p>device：设备已连接到 adb服务器。请注意，此状态并不表示 Android 系统已完全启动并可正常运行，因为在设备连接到 adb时系统仍在启动。系统完成启动后，设备通常处于此运行状态。</p>
+<p>no device：未连接任何设备。</p>
+<p>说明：如果加入 -l 选项，devices命令会告知设备是什么。当连接了多个设备时，此信息可以方便区分这些设备。</p>
+<p><strong>再次命令</strong>，看到一个设备号，即代表成功</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-shell"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">adb</span><span style="color:#B56959;--shiki-dark:#C98A7D"> devices</span></span></code></pre>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767097301313-7c2cf9ba-e916-4079-b316-42bd22f03b28.png" alt="img"></p>
+<p>shell交互</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-shell"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">adb</span><span style="color:#B56959;--shiki-dark:#C98A7D"> shell</span></span></code></pre>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767097828104-75ebd9ff-9486-4d68-b35e-ceda77734d07.png" alt="img"></p>
+<h2 id="16-谷歌出厂映像"><a class="anchor" href="#16-谷歌出厂映像">#</a> 1.6 谷歌出厂映像</h2>
+<p>上面可知设备名是tokay，对应pixel9，漏洞复现在Android15版本，欧版的</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767098304383-66f595e5-cdee-460c-b544-12c6c93c1022.png" alt="img"></p>
+<p>点击flash【<a target="_blank" rel="noopener" href="https://flash.android.com/welcome?continue=%2Fbuild%2F13038733%3Ftarget%3Dtokay-user%26hl%3Dzh-cn">Android Flash Tool</a>】，旁边的link已经失效了</p>
+<p>【根据<a target="_blank" rel="noopener" href="https://source.android.com/docs/setup/test/flash?hl=zh-cn">官方教程</a>：】</p>
+<p><a target="_blank" rel="noopener" href="https://flash.android.com/?hl=zh-cn">Android 刷写工具</a>是一款基于网络的工具，可让您将预构建 Android build 刷写到设备上，以用于开发和测试。</p>
+<p>运行 Android 刷写工具，必须满足以下要求：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://source.android.com/docs/setup/start/requirements?hl=zh-cn#hardware-requirements">硬件要求</a></li>
+<li>支持 <a target="_blank" rel="noopener" href="https://caniuse.com/#search=Webusb">WebUSB</a> 的浏览器，例如 <a target="_blank" rel="noopener" href="https://www.google.com/chrome/?hl=zh-cn">Chrome</a> 或 Edge 79 及更高版本</li>
+</ul>
+<h3 id="161-启用-usb-连接"><a class="anchor" href="#161-启用-usb-连接">#</a> 1.6.1 启用 USB 连接</h3>
+<p>在设备上运行 Android 之前，必须先启用 USB 连接：</p>
+<ol>
+<li>将您的设备连接到工作站上的 USB 端口。</li>
+</ol>
+<h3 id="162-刷写设备"><a class="anchor" href="#162-刷写设备">#</a> 1.6.2 刷写设备</h3>
+<ol>
+<li>如果您在计算机上运行 <a target="_blank" rel="noopener" href="https://developer.android.com/studio/command-line/adb?hl=zh-cn">Android 调试桥 (adb)</a>，请先停止 adb 服务，然后再继续操作，以免该服务干扰刷写过程。如要停止 adb，请运行以下命令：</li>
+</ol>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-plain"><span class="line"><span>adb kill-server</span></span></code></pre>
+<ol>
+<li>在开发工作站上的浏览器中，打开 <a target="_blank" rel="noopener" href="https://flash.android.com/?hl=zh-cn">flash.android.com</a>。系统会显示欢迎页面，点击开始</li>
+</ol>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767099028715-52e50729-2626-4d7e-92fc-e171bc56f2d5.png" alt="img"></p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767099069833-6cbc9bdc-a69c-4a7c-85d1-cfe0363e5896.png" alt="img"></p>
+<p>需要注意右上角的拦截：<img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767099119318-17566db1-f235-4498-88ed-55afb203fb61.png" alt="img"></p>
+<ol>
+<li>点击<strong>允许 ADB 访问</strong>，以允许该工具通过 adb 与您的测试设备通信。</li>
+</ol>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767099158323-c23658dd-a1d3-40bd-b3d5-3d8f5b87fcbd.png" alt="img"></p>
+<ol>
+<li>点击<strong>添加新设备</strong>。</li>
+</ol>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099190732-1d2d8720-7395-4220-a589-6d3e7e10eae1.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099190732-1d2d8720-7395-4220-a589-6d3e7e10eae1.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<ol>
+<li>从列表中选择您的设备，然后点击<strong>连接</strong>。此列表不一定包含完整的设备名称。</li>
+</ol>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099215108-e6bce9b9-83ed-4187-9145-67ebb01d402c.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099215108-e6bce9b9-83ed-4187-9145-67ebb01d402c.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<ol>
+<li>在设备屏幕上，选择<strong>一律允许使用这台计算机进行调试</strong>，然后点击<strong>确定</strong>，接受 USB 调试连接。</li>
+</ol>
+<p>这一步可能显示被占用，还需要关闭Android Studio和IDEA</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767099312907-45f6a751-f78a-440a-8d88-29521f5849a9.png" alt="img"></p>
+<ol>
+<li>手机上选择允许访问，然后在浏览器中选择已连接的设备。</li>
+</ol>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767099407707-8cfd624c-9b4f-4dba-ba62-04f41044d277.png" alt="img"></p>
+<ol>
+<li>从列表中搜索并选择所需的 build。您还可以选择擦除设备或强制刷写所有分区等选项。</li>
+</ol>
+<p>点更多发布版本，然后选择安卓15</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099500482-a7ec94c8-d8d9-4fa6-92ba-f4d478a9c97f.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099500482-a7ec94c8-d8d9-4fa6-92ba-f4d478a9c97f.png</a>" alt="img" style="zoom: 50%;" /&gt;<img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767099533437-2d5e62af-f707-402d-b7a7-14f8b0e1d455.png" alt="img"></p>
+<p>选择欧版的</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099590676-480a988c-7314-4670-9982-1fec6807ee9f.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099590676-480a988c-7314-4670-9982-1fec6807ee9f.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<p>编号和前面的选的是同一个</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099702388-0a7dceb2-eb29-4423-b8e0-e17dc62b0a51.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767099702388-0a7dceb2-eb29-4423-b8e0-e17dc62b0a51.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<ol>
+<li>如要开始刷写，请点击 <strong>Install</strong>。设备会重新启动并进入 Fastboot 模式 (Fastboot mode)。</li>
+<li>出现 <strong>Flash Complete</strong> 后，从设备上拔下 USB 线。</li>
+</ol>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767102313990-3c8b0ba6-a01c-4fd5-ac44-e1c5e532a133.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767102313990-3c8b0ba6-a01c-4fd5-ac44-e1c5e532a133.png</a>" alt="img" style="zoom:50%;" /&gt;</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767102709080-91ca0766-2233-4781-9f11-58981b7c7c85.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/1767102709080-91ca0766-2233-4781-9f11-58981b7c7c85.png</a>" alt="img" style="zoom:33%;" /&gt;</p>
+<h1 id="2获取root权限使用-magisk"><a class="anchor" href="#2获取root权限使用-magisk">#</a> 2.获取root权限（使用 Magisk）</h1>
+<p>Root 的核心思路是：修补系统的引导镜像 (<code>boot.img</code>)，然后刷入这个被修改过的镜像。</p>
+<h2 id="21安装magisk-app"><a class="anchor" href="#21安装magisk-app">#</a> 2.1安装Magisk App：</h2>
+<ul>
+<li>从 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases">Magisk GitHub Releases</a> 下载最新的 <code>Magisk.apk</code>。</li>
+</ul>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260117211834638.png" alt="image-20260117211834638"></p>
+<ul>
+<li>在下载的目录下执行命令，安装到手机：<code>adb install Magisk-v30.6.apk</code></li>
+</ul>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260117212234054.png" alt="image-20260117212234054"></p>
+<p>可以在手机上看到有该软件（Magisk）</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250329-091544%5B2%5D.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250329-091544[2].png</a>" alt="img" style="zoom:33%;" /&gt;</p>
+<h2 id="22获取出厂映像"><a class="anchor" href="#22获取出厂映像">#</a> 2.2获取出厂映像</h2>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://cdn.nlark.com/yuque/0/2025/png/35603403/1767102709080-91ca0766-2233-4781-9f11-58981b7c7c85.png">https://cdn.nlark.com/yuque/0/2025/png/35603403/1767102709080-91ca0766-2233-4781-9f11-58981b7c7c85.png</a>" alt="img" style="zoom:33%;" /&gt;</p>
+<p>看见build号是<code>BP1A.250505.005.A1</code></p>
+<p>在谷歌官网<a target="_blank" rel="noopener" href="https://developers.google.com/android/images?hl=zh-cn%EF%BC%8C%E6%89%BE%E5%88%B0%E5%AE%8C%E5%85%A8%E7%9B%B8%E5%90%8C%E7%9A%84%E6%98%A0%E5%83%8F%EF%BC%8C%E4%B8%8B%E8%BD%BD%EF%BC%9A">https://developers.google.com/android/images?hl=zh-cn，找到完全相同的映像，下载：</a></p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260118173511832.png" alt="image-20260118173511832"></p>
+<p>下载后得到：</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119160849905.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119160849905.png</a>" alt="image-20260119160849905" style="zoom:67%;" /&gt;</p>
+<p>全部解压，解压后打开看到里面还有一个image压缩包，继续解压这个压缩包</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119161208022.png" alt="image-20260119161208022"></p>
+<h2 id="23刷机"><a class="anchor" href="#23刷机">#</a> 2.3刷机</h2>
+<p>解压后在里面找到<code>init_boot.img</code></p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-tex"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">pixel 7系列 及其以上的使用init_boot.img文件。</span></span></code></pre>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119161511392.png" alt="image-20260119161511392"></p>
+<p>将这个<code>init_boot.img</code>传给pixel9中，上传后启动<code>Magisk</code></p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-041141%5B1%5D.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-041141[1].png</a>" alt="img" style="zoom: 25%;" /&gt;</p>
+<p>点击右上方的<code>安装</code>,点击<code>选择并修补文件</code></p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-041751%5B1%5D.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-041751[1].png</a>" alt="img" style="zoom:25%;" /&gt;</p>
+<p>然后找到刚刚的传过去的<code>init_boot.img</code></p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-041925%5B1%5D.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-041925[1].png</a>" alt="img" style="zoom:25%;" /&gt;</p>
+<p>选择这个文件，点击<code>开始</code>，然后就完成了【利用Magisk解包该文件，修补其中所需要的二进制文件,然后将其重新打包成一个新文件】</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-042130%5B2%5D.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/Screenshot_20250331-042130[2].png</a>" alt="img" style="zoom:25%;" /&gt;</p>
+<p>将新修复产生的<code>magisk_pached</code>文件</p>
+<p>1.首先通过<code>adb shell</code>将其这个<code>magisk_patched-30600_fHPB0.img</code>复制到我们电脑能直接访问的路径下<code>/storage/emulated/0/Android</code>【不然电脑看不到这个镜像文件】</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-shell"><span class="line"><span style="color:#998418;--shiki-dark:#B8A965"> cd</span><span style="color:#B56959;--shiki-dark:#C98A7D"> ~/storage/emulated/0/Download/</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665"> cp</span><span style="color:#B56959;--shiki-dark:#C98A7D"> magisk_patched-30600_fHPBO.img</span><span style="color:#B56959;--shiki-dark:#C98A7D"> ~/storage/emulated/0/Android</span></span></code></pre>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119170207250.png" alt="image-20260119170207250"></p>
+<p>然后复制到电脑和<code>adb</code>以及<code>fast_bootg工具</code>相同的文件夹中：</p>
+<p>&lt;img src="<a target="_blank" rel="noopener" href="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119170911500.png">https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119170911500.png</a>" alt="image-20260119170911500" style="zoom:50%;" /&gt;</p>
+<p>凑齐手机到快速启动模式，点击<code>重启</code>,然后按住<code>音量减小键</code>，会进入<code>Fastboot Mode</code></p>
+<p>然后启动终端【需要保证连接了pixel9手机】，执行命令，确保电脑和手机连接</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-shell"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">fastboot</span><span style="color:#B56959;--shiki-dark:#C98A7D"> devices</span></span></code></pre>
+<p>下面的就是连接成功（左边为序列号）</p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119171711716.png" alt="image-20260119171711716"></p>
+<p>成功后输入命令:</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-shell"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">fastboot</span><span style="color:#B56959;--shiki-dark:#C98A7D"> flash</span><span style="color:#B56959;--shiki-dark:#C98A7D"> init_boot</span><span style="color:#B56959;--shiki-dark:#C98A7D"> mag</span></span></code></pre>
+<p>剩下的按tab键可补全，然后按回车，<code>Fastboot</code>会将该修复文件发送到分区，当第一个发送返回<code>OKAY</code>后，将该修复文件写入该分区,然后再次受到<code>OKAY</code></p>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119172343310.png" alt="image-20260119172343310"></p>
+<p>确保手机在启动选项的页面，然后按一下电源键重启设备，然后等一会就自动开机了</p>
+<p>再次启动<code>Magisk</code>应用，【有时会提示需要进行额外操作，点确定即可，我这里没有】，然后上面显示已安装就表明root成功【我这里当时保存了两个修复img，所以可能有问题】</p>
+<p>执行命令进入root用户，第一次使用手机上会显示，授予权限即可：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-shell"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">adb</span><span style="color:#B56959;--shiki-dark:#C98A7D"> shell</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">su</span><span style="color:#B56959;--shiki-dark:#C98A7D"> root</span></span></code></pre>
+<p><img loading="lazy" src="https://blog-vvwwvv.oss-cn-hangzhou.aliyuncs.com/img/image-20260119173653580.png" alt="image-20260119173653580"></p>
+<p>至此就刷root结束了</p>
+<div class="tags"><a href="/tags/Android/" rel="tag"><i class="ic i-tag"></i>Android</a></div></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i></span><span class="text">更新于 </span><time title="修改时间：2026-01-21 20:53:07" itemprop="dateModified" datetime="2026-01-21T20:53:07+08:00">2026-01-21</time></span></div><div id="copyright"><ul><li class="author"><strong>本文作者：</strong>vvwwv<i class="ic i-at"><em>@</em></i>此时相望不相闻，愿逐月华流照君</li><li class="link"><strong>本文链接：</strong><a href="https://cyb141520.github.io/2026/01/10/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Apixel%E5%88%B7%E6%9C%BA/" title="安卓安全（一）：pixel刷机及root">https://cyb141520.github.io/2026/01/10/安卓安全/安卓安全（一）：pixel刷机/</a></li><li class="license"><strong>版权声明：</strong>本站所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/" rel="prev" itemprop="url" data-background-image="https://pweb.cwa.gov.tw/PopularScience/images/02_SubjectMaterial/02_sky/02_sky_02/02_sky_02_S.jpg" title="格式化字符串"><span class="type">上一篇</span><span class="category"><i class="ic i-flag"></i>专栏</span><h3>格式化字符串</h3></a></div><div class="item right"><a href="/2026/01/14/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8/Android%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="next" itemprop="url" data-background-image="https://pweb.cwa.gov.tw/PopularScience/images/02_SubjectMaterial/02_sky/02_sky_02/02_sky_02_S.jpg" title="Android漏洞复现"><span class="type">下一篇</span><span class="category"><i class="ic i-flag"></i>漏洞复现</span><h3>Android漏洞复现</h3></a></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1adb%E5%92%8Cfastboot"><span class="toc-number">1.</span> <span class="toc-text"> 1.adb和fastboot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-platform-tools"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 platform-tools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E8%A7%A3%E5%8E%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 1.2 解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 1.3 环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E6%B5%8B%E8%AF%95adb%E5%92%8Cfastboot"><span class="toc-number">1.4.</span> <span class="toc-text"> 1.4 测试adb和fastboot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E8%B0%B7%E6%AD%8Cusb%E9%A9%B1%E5%8A%A8"><span class="toc-number">1.5.</span> <span class="toc-text"> 1.5 谷歌USB驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E8%BF%9E%E6%8E%A5%E6%89%8B%E6%9C%BA"><span class="toc-number">1.6.</span> <span class="toc-text"> 1.6 连接手机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E8%B0%B7%E6%AD%8C%E5%87%BA%E5%8E%82%E6%98%A0%E5%83%8F"><span class="toc-number">1.7.</span> <span class="toc-text"> 1.6 谷歌出厂映像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#161-%E5%90%AF%E7%94%A8-usb-%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 1.6.1 启用 USB 连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#162-%E5%88%B7%E5%86%99%E8%AE%BE%E5%A4%87"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 1.6.2 刷写设备</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E8%8E%B7%E5%8F%96root%E6%9D%83%E9%99%90%E4%BD%BF%E7%94%A8-magisk"><span class="toc-number">2.</span> <span class="toc-text"> 2.获取root权限（使用 Magisk）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21%E5%AE%89%E8%A3%85magisk-app"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1安装Magisk App：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22%E8%8E%B7%E5%8F%96%E5%87%BA%E5%8E%82%E6%98%A0%E5%83%8F"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2获取出厂映像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23%E5%88%B7%E6%9C%BA"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.3刷机</span></a></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"><ul><li class="active"><a href="/2026/01/10/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Apixel%E5%88%B7%E6%9C%BA/" rel="bookmark" title="安卓安全（一）：pixel刷机及root">安卓安全（一）：pixel刷机及root</a></li><li><a href="/2026/01/14/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8/Android%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="bookmark" title="Android漏洞复现">Android漏洞复现</a></li></ul></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><img class="image" loading="lazy" decoding="async" itemprop="image" alt="vvwwv" src="/assets/avatar.avif"><p class="name" itemprop="name">vvwwv</p><div class="description" itemprop="description"></div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">14</span><span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">13</span><span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">8</span><span class="name">标签</span></a></div></nav><div class="social"><a target="_blank" rel="noopener" href="https://github.com/yourname" class="item github" title="https://github.com/yourname"><i class="ic i-github"></i></a></div><div class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li></div></div></div></div><ul id="quick"><li class="prev pjax"><a href="/2026/01/14/%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8/Android%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div><div id="player"></div></main><footer id="footer"><div class="inner"><div class="widgets"><div class="rpost pjax"><h2>随机文章</h2><ul><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/how2heap/" title="分类于how2heap">how2heap</a></div><span><a href="/2023/10/19/pwn%E4%B8%93%E6%A0%8F/how2heap(2)/">how2heap</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/%E6%B2%99%E7%9B%92/" title="分类于沙盒">沙盒</a></div><span><a href="/2023/08/29/pwn%E4%B8%93%E6%A0%8F/%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6/">沙盒机制</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/how2heap/" title="分类于how2heap">how2heap</a></div><span><a href="/2023/10/19/pwn%E4%B8%93%E6%A0%8F/how2heap/">how2heap</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a></div><span><a href="/2023/10/04/pwn%E4%B8%93%E6%A0%8F/ASLR%E4%B8%8EPIE/">ASLR与PIE（例题：CTFshow的pwn31）</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于CTF">CTF</a><i class="ic i-angle-right"></i><a href="/categories/CTF/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/CTF/PWN%E4%B8%93%E6%A0%8F/ROP/" title="分类于ROP">ROP</a><i class="ic i-angle-right"></i><a href="/categories/CTF/PWN%E4%B8%93%E6%A0%8F/ROP/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a></div><span><a href="/2023/08/24/pwn%E4%B8%93%E6%A0%8F/ret2csu/">64位构造通用ROP，ret2csu</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/%E5%A0%86%E5%88%A9%E7%94%A8/" title="分类于堆利用">堆利用</a></div><span><a href="/2023/10/05/pwn%E4%B8%93%E6%A0%8F/large_bin_attack/">large bin attack（为house利用系列打下基础）</a></span></li><li class="item"><div class="breadcrumb"></div><span><a href="/2022/10/07/hello-world/">Hello World</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a></div><span><a href="/2023/09/28/pwn%E4%B8%93%E6%A0%8F/%E6%A0%88%E8%BF%81%E7%A7%BB/">栈迁移</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/PWN%E4%B8%93%E6%A0%8F/" title="分类于PWN专栏">PWN专栏</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/" title="分类于二进制安全">二进制安全</a><i class="ic i-angle-right"></i><a href="/categories/PWN%E4%B8%93%E6%A0%8F/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E5%85%A8/ROP/" title="分类于ROP">ROP</a></div><span><a href="/2023/10/01/pwn%E4%B8%93%E6%A0%8F/ret2dlresolve/">高级ROP之ret2dlresolve</a></span></li><li class="item"><div class="breadcrumb"><a href="/categories/CTF/" title="分类于CTF">CTF</a><i class="ic i-angle-right"></i><a href="/categories/CTF/%E4%B8%93%E6%A0%8F/" title="分类于专栏">专栏</a></div><span><a href="/2025/08/06/pwn%E4%B8%93%E6%A0%8F/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E_new/">格式化字符串</a></span></li></ul></div><div class="rpost pjax"><h2>最新评论</h2></div></div><div class="status"><div class="copyright">© 2022 -<span itemprop="copyrightYear">2026</span><span class="with-love"><i class="ic i-sakura rotate"></i></span><span class="author" itemprop="copyrightHolder">vvwwv @ vvwwv</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i></span><span title="站点总字数">152k 字</span><span class="post-meta-divider"> | </span><span class="post-meta-item-icon"><i class="ic i-coffee"></i></span><span title="站点阅读时长">2:19</span></div><div class="powered-by">基于 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> &amp; Theme.<a target="_blank" rel="noopener" href="https://github.com/theme-shoka-x/hexo-theme-shokaX/">ShokaX</a></div></div></div></footer></div><script data-config="" type="text/javascript">var LOCAL = {
+    ispost: true,
+    path: `2026/01/10/安卓安全/安卓安全（一）：pixel刷机/`,
+    favicon: {
+        show: `o(*￣3￣)o 欢迎回来！`,
+        hide: `(xB_xB) 崩溃啦！`
+    },
+    search: {
+        placeholder: "文章搜索",
+        empty: "关于 「 ${query} 」，什么也没搜到",
+        stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    nocopy: "false",
+    copyright: `复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。`,
+    copy_tex: false,
+    katex: false,
+    mermaid: false,
+    audio: undefined,
+    nocopy: false,
+    outime: true,
+    template: `<div class="note warning"><p><span class="label warning">文章时效性提示</span><br>这是一篇发布于 {{publish}} 天前，最后一次更新在 {{updated}} 天前的文章，部分信息可能已经发生改变，请注意甄别。</p></div>`,
+    quiz: {
+        choice: `单选题`,
+        multiple: `多选题`,
+        true_false: `判断题`,
+        essay: `问答题`,
+        gap_fill: `填空题`,
+        mistake: `错题备注`
+    }
+};
+</script><script src="/js/siteInit.js?v=0.5.4" type="module" fetchpriority="high" defer=""></script></body></html>
